@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Pizzaiolo - Rodízio em Domicílio | Foz do Iguaçu</title>
+    <style>
+        /* Estilos e Cores da Página */
+        :root {
+            --primary-color: #d35400; /* Laranja Pizzaria */
+            --secondary-color: #2c3e50;
+            --whatsapp-color: #25D366;
+            --bg-light: #fdfaf6;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Cabeçalho */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        /* Botões */
+        .btn {
+            display: inline-block;
+            background-color: var(--whatsapp-color);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1ebe57;
+        }
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        /* Seções */
+        section {
+            padding: 60px 0;
+        }
+        h2 {
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .grid-3 {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+        /* Tabelas e Listas */
+        .menu-category {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .menu-category h3 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .aviso {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        /* Rodapé */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .grid-3 { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>O PIZZAIOLO</h1>
+            <p>Pizzaria & Frios. Leve o melhor rodízio de pizza de Foz do Iguaçu direto para a sua casa!</p>
+            <a href="https://wa.me/5547988429749?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20o%20rodízio!" class="btn" target="_blank">🍕 Solicitar Orçamento no WhatsApp</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2>Como Funciona a Nossa Experiência?</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>⏳ Duração</h3>
+                <p>Por três horas, levamos uma experiência completa de pizzaria para você e seus convidados, sem preocupações.</p>
+            </div>
+            <div class="card">
+                <h3>🔥 Estrutura</h3>
+                <p>Nós fornecemos forno, gás, extensões, formas e utensílios. Você só precisa fornecer o espaço (mesas/balcão).</p>
+            </div>
+            <div class="card">
+                <h3>🍅 Qualidade</h3>
+                <p>Ingredientes frescos para a massa e os recheios mais saborosos. Pizzas médias, de 35 a 40 cm.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="background-color: transparent;">
+        <h2>O Nosso Cardápio</h2>
+        
+        <div class="menu-category">
+            <h3>Pizzas (A partir de R$ 60,00 por pessoa)</h3>
+            <p><em>*Pacote mínimo para 12 pessoas (tarifa de adulto).</em></p>
+            <ul>
+                <li><strong>Clássicas & Favoritas:</strong> Calabresa, Calabresa e cebola, Margherita, Quatro queijos, Portuguesa e Napolitana.</li>
+                <li><strong>Especiais & Carnes:</strong> Pepperoni, Pepperoni e rúcula, Bacon e palmito, Siciliana e Atum, cebola e requeijão.</li>
+                <li><strong>Gourmet:</strong> Alho e mel, Rúcula e tomate seco, Marinara, Prosciutto e muçarela de bufala, Figo com gorgonzola.</li>
+                <li><strong>Sobremesas:</strong> Romeu, Bacon e Julieta, Banana com canela, Suspiros com mel e Italiana.</li>
+            </ul>
+        </div>
+
+        <div class="menu-category">
+            <h3>Cardápio de Petiscos Frios</h3>
+            <p><em>*Valores a combinar, verificar disponibilidade.</em></p>
+            <table>
+                <tr>
+                    <th>Linha</th>
+                    <th>Opções</th>
+                </tr>
+                <tr>
+                    <td><strong>Rimini</strong></td>
+                    <td>Cornicione, Brusquetta, Crostini, Rotolo di Pizza.</td>
+                </tr>
+                <tr>
+                    <td><strong>Ricconi</strong></td>
+                    <td>Tábuas de Trio Curados, Trio Queijos, Trio de Azeitonas, Frutas Secas e Frescas (Tábuas de 300g).</td>
+                </tr>
+                <tr>
+                    <td><strong>Amalfi</strong></td>
+                    <td>Spiedo Napoli, Spiedo Firenze, Spiedo Roma, Spiedo Veneza (6 unidades por porção).</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Informações Importantes</h2>
+        <div class="aviso">
+            <ul>
+                <li><strong>Crianças:</strong> Até 3 anos não pagam; de 4 a 12 anos pagam 50% do valor; a partir de 13 anos, valor integral.</li>
+                <li><strong>Convidados:</strong> Extras serão adicionados à conta final. Para menos convidados, o valor contratado permanece.</li>
+                <li><strong>O que não incluímos:</strong> Bebidas, louças, talheres, toalhas de mesa, copos e condimentos.</li>
+                <li><strong>Atenção:</strong> Verifique se há restrições à entrada de botijão de gás no local do evento.</li>
+                <li><strong>Cancelamentos:</strong> Prazo de 72 horas de antecedência ou conforme orçamento.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>Pronto para agendar a sua festa?</h3>
+            <p>Cada orçamento é exclusivo para o evento contratado.</p>
+            <br>
+            <p><strong>O Pizzaiolo</strong></p>
+            <p>Foz do Iguaçu, Paraná - Brasil</p>
+            <p>Dimitry Barcellos</p>
+            <br>
+            <a href="https://wa.me/5547988429749?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20o%20rodízio!" class="btn">Chamar no WhatsApp</a>
+        </div>
+    </footer>
+
+</body>
+</html>
