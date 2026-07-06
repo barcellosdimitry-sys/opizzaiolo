@@ -41,7 +41,8 @@
             color: white;
             text-align: center;
             padding: 140px 24px;
-            background-image: linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop');
+            /* Imagem de Fundo: Farinha e preparação artesanal da massa */
+            background-image: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?q=80&w=1600&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -81,7 +82,7 @@
             color: white;
             padding: 16px 45px;
             text-decoration: none;
-            border-radius: 0; /* Estética minimalista quadrada */
+            border-radius: 0;
             border: 1px solid var(--accent-color);
             font-size: 1rem;
             font-weight: 500;
@@ -143,9 +144,8 @@
 
         .card-img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
-            filter: grayscale(15%);
         }
 
         .card-content {
@@ -166,7 +166,7 @@
             line-height: 1.7;
         }
 
-        /* Layout do Cardápio (Estilo Revista/Bistrô) */
+        /* Layout do Cardápio */
         .menu-row {
             display: flex;
             gap: 60px;
@@ -185,7 +185,7 @@
         .menu-image-container {
             flex: 1;
             height: 520px;
-            box-shadow: 15px 15px 0px var(--accent-color); /* Detalhe de design sofisticado */
+            box-shadow: 15px 15px 0px var(--accent-color);
             overflow: hidden;
         }
 
@@ -233,7 +233,7 @@
             font-weight: 500;
         }
 
-        /* Tabelas Minimalistas de Menu */
+        /* Tabelas */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -284,7 +284,7 @@
             font-size: 1.2rem;
         }
 
-        /* Rodapé Rústico Chic */
+        /* Rodapé */
         footer {
             background-color: #171615;
             color: white;
@@ -325,7 +325,6 @@
             background-color: #1ebe57;
         }
 
-        /* Responsividade */
         @media (max-width: 900px) {
             header h1 { font-size: 3rem; }
             .menu-row, .menu-row.reverse {
@@ -356,21 +355,24 @@
         <h2>A Experiência Conduzida por Nós</h2>
         <div class="grid-3">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=600&auto=format&fit=crop" alt="Tempo de celebração" class="card-img">
+                <!-- Imagem Corrigida: Pizza artesanal premium sendo servida na mesa -->
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600&auto=format&fit=crop" alt="Pizza artesanal fresca servida na mesa" class="card-img">
                 <div class="card-content">
                     <h3>⏳ Três Horas de Serviço</h3>
                     <p>Conduzimos um fluxo contínuo de pizzas artesanais servidas quentinhas, permitindo que seus convidados desfrutem do evento sem pressa.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" alt="Estrutura profissional" class="card-img">
+                <!-- Imagem Corrigida: Pizza assando diretamente no calor do forno de pedra -->
+                <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?q=80&w=600&auto=format&fit=crop" alt="Pizza assando em forno de alta temperatura" class="card-img">
                 <div class="card-content">
                     <h3>🔥 Infraestrutura Própria</h3>
                     <p>Fornecemos maquinário profissional, fornos de alta performance e utensílios de corte. Cuidamos de toda a dinâmica operacional nos bastidores.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1555448248-2571daf6344b?q=80&w=600&auto=format&fit=crop" alt="Massa fermentada artesanal" class="card-img">
+                <!-- Imagem Corrigida: Mãos do pizzaiolo trabalhando a massa com farinha na mesa rústica -->
+                <img src="https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?q=80&w=600&auto=format&fit=crop" alt="Pizzaiolo preparando a massa com farinha na mesa" class="card-img">
                 <div class="card-content">
                     <h3>🍅 Rigor Artesanal</h3>
                     <p>Massas leves de longa fermentação natural, abertas manualmente na hora do evento. Ingredientes frescos e pizzas perfeitas de 35cm.</p>
@@ -383,7 +385,7 @@
         <div class="container">
             <h2>Nossas Criações Gastronômicas</h2>
             
-            <!-- Bloco de Pizzas (Texto Esquerda, Imagem Direita) -->
+            <!-- Bloco de Pizzas -->
             <div class="menu-row">
                 <div class="menu-text">
                     <div class="menu-category">
@@ -398,12 +400,12 @@
                     </div>
                 </div>
                 <div class="menu-image-container">
-                    <!-- Imagem Ultra Estável de Pizza Artesanal -->
-                    <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=800&auto=format&fit=crop" alt="Pizza Gourmet Artesanal">
+                    <!-- Imagem: Close de uma belíssima pizza margherita artesanal com manjericão fresco -->
+                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=800&auto=format&fit=crop" alt="Pizza Gourmet Artesanal de Longa Fermentação">
                 </div>
             </div>
 
-            <!-- Bloco de Frios (Imagem Esquerda, Texto Direita) -->
+            <!-- Bloco de Frios -->
             <div class="menu-row reverse">
                 <div class="menu-text">
                     <div class="menu-category">
@@ -434,8 +436,8 @@
                     </div>
                 </div>
                 <div class="menu-image-container">
-                    <!-- Nova Imagem de Frios: Link global ultra estável do Unsplash com excelente contraste -->
-                    <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop" alt="Mesa de frios e charcutaria fina">
+                    <!-- Imagem Corrigida: Uma tábua de charcutaria real, sofisticada, com presunto cru, salames e acompanhamentos finos -->
+                    <img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800&auto=format&fit=crop" alt="Tábua de frios finos, embutidos e charcutaria gourmet">
                 </div>
             </div>
         </div>
