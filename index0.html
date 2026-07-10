@@ -1,1 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Pizzaiolo - Experiências Gastronômicas para Eventos</title>
+    <!-- Fontes Premium de Alta Gastronomia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --accent-color: #c07d5c; /* Terracota Gourmet */
+            --accent-dark: #a16243;
+            --bg-dark: #121212;
+            --bg-light: #faf7f2; /* Creme Suave */
+            --text-dark: #2c2a29;
+            --text-muted: #6e6a68;
+            --whatsapp-color: #25D366;
+        }
 
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Header Atualizado */
+        header {
+            background-color: var(--bg-dark);
+            color: white;
+            text-align: center;
+            padding: 140px 24px;
+            /* Sugestão: Trocar por foto real ampla de uma celebração com o pizzaiolo trabalhando */
+            background-image: linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header .brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+            color: var(--accent-color);
+        }
+
+        header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        header p.hero-text {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            color: #e5e0db;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        header .hero-info {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Botão Elegante */
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: white;
+            padding: 16px 45px;
+            text-decoration: none;
+            border-radius: 0;
+            border: 1px solid var(--accent-color);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Seções */
+        section {
+            padding: 90px 0;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text-dark);
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        h2.no-after::after {
+            display: none;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Ocasiões (Tags) */
+        .occasions-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        
+        .occasion-tag {
+            border: 1px solid var(--accent-color);
+            color: var(--accent-dark);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            background-color: transparent;
+        }
+
+        /* Passos (Como Funciona) */
+        .steps-grid {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            flex: 1;
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border: 1px solid #eeebe5;
+        }
+
+        .step-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Grid de Experiência (O que está incluído) */
+        .grid-3 {
+            display: flex;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border: 1px solid #eeebe5;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 35px 25px;
+        }
+
+        .card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text-dark);
+            margin-top: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Layout do Cardápio */
+        .menu-row {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .menu-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .menu-text {
+            flex: 1.2;
+        }
+
+        .menu-image-container {
+            flex: 1;
+            height: 520px;
+            box-shadow: 15px 15px 0px var(--accent-color);
+            overflow: hidden;
+        }
+
+        .menu-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .menu-image-container:hover img {
+            transform: scale(1.03);
+        }
+
+        .menu-category h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text-dark);
+            font-size: 2.3rem;
+            margin-top: 0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .menu-category .menu-note {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eae6df;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        ul li strong {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 16px 10px;
+            text-align: left;
+            border-bottom: 1px solid #eae6df;
+        }
+
+        th {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td strong {
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* FAQ - Perguntas Frequentes */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background-color: white;
+            border: 1px solid #eeebe5;
+            margin-bottom: 10px;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        details[open] {
+            border-left: 4px solid var(--accent-color);
+        }
+
+        summary {
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details p {
+            margin-top: 15px;
+            margin-bottom: 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Prova Social Placeholder */
+        .social-proof {
+            background-color: #171615;
+            color: white;
+            text-align: center;
+            padding: 80px 24px;
+        }
+        .social-proof h2 {
+            color: white;
+        }
+        .social-proof p {
+            color: #a8a4a1;
+            margin-bottom: 30px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 90px 24px;
+        }
+
+        footer h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        footer .footer-sub {
+            color: var(--accent-color);
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        footer p {
+            margin: 8px 0;
+            color: #a8a4a1;
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        footer .btn-whatsapp {
+            background-color: var(--whatsapp-color);
+            border: none;
+            border-radius: 4px;
+            margin-top: 30px;
+            color: white;
+            font-weight: 600;
+        }
+        
+        footer .btn-whatsapp:hover {
+            background-color: #1ebe57;
+        }
+
+        @media (max-width: 900px) {
+            header h1 { font-size: 2.5rem; }
+            .menu-row, .menu-row.reverse {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .menu-image-container {
+                width: 100%;
+                height: 350px;
+                box-shadow: 10px 10px 0px var(--accent-color);
+            }
+            .steps-grid { flex-direction: column; }
+            h2 { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Abertura Estratégica focada no "Desejo" -->
+    <header>
+        <div class="container">
+            <div class="brand">O PIZZAIOLO</div>
+            <h1>Rodízio de pizza artesanal<br>na sua casa ou evento</h1>
+            <p class="hero-text">Levamos forno, ingredientes e equipe para preparar pizzas na hora durante três horas. Você reúne os convidados. Nós cuidamos da experiência gastronômica.</p>
+            <div class="hero-info">Atendimento em Foz do Iguaçu | A partir de 12 pessoas</div>
+            <!-- Link pré-preenchido para o briefing -->
+            <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20consultar%20o%20rodízio%20de%20pizza%20em%20casa.%0A%0AData%20do%20evento:%0ALocal:%0ANúmero%20estimado%20de%20convidados:%0ATipo%20de%20celebração:" class="btn" target="_blank">Consultar Disponibilidade</a>
+        </div>
+    </header>
+
+    <!-- Ocasiões de Uso -->
+    <section class="container" style="padding-top: 60px; padding-bottom: 60px;">
+        <h2 class="no-after" style="font-size: 2rem; margin-bottom: 10px;">Para quais ocasiões?</h2>
+        <p class="section-subtitle" style="margin-bottom: 20px;">Transformamos diferentes tipos de encontro em uma verdadeira pizzaria particular.</p>
+        <div class="occasions-wrapper">
+            <span class="occasion-tag">Aniversários</span>
+            <span class="occasion-tag">Eventos Familiares</span>
+            <span class="occasion-tag">Confraternizações</span>
+            <span class="occasion-tag">Encontros de Empresas</span>
+            <span class="occasion-tag">Celebrações Intimistas</span>
+        </div>
+    </section>
+
+    <!-- Como Funciona (Escaneável) -->
+    <section class="container" style="background-color: white; padding: 80px 40px; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
+        <h2>Como Funciona</h2>
+        <p class="section-subtitle">Em apenas três passos, você garante tranquilidade para receber seus convidados.</p>
+        
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h3>Alinhamento e Reserva</h3>
+                <p>Você escolhe a data, informa o número de convidados e nós personalizamos a proposta para o seu formato de evento.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h3>Nós levamos a estrutura</h3>
+                <p>Nossa equipe chega com antecedência levando fornos, utensílios e insumos frescos para montar a estação de trabalho no seu espaço.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h3>Pizzas servidas na hora</h3>
+                <p>Durante três horas, os convidados desfrutam do cheiro de pizza assando na hora e você fica 100% livre da cozinha para aproveitar a própria festa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- O que está incluído (Estrutura operacional) -->
+    <section class="container">
+        <h2>O que está incluído na experiência</h2>
+        <div class="grid-3">
+            <div class="card">
+                <!-- Sugestão: Foto real de pizzas saindo do forno no evento -->
+                <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?q=80&w=600&auto=format&fit=crop" alt="Pizza assando em forno de alta temperatura" class="card-img">
+                <div class="card-content">
+                    <h3>⏳ Duração e Serviço</h3>
+                    <p>Durante três horas de preparo e serviço no local, as pizzas saem do forno em sequência, garantindo variedade, temperatura e ritmo de serviço ideal.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Sugestão: Foto real do forno montado em um local de evento -->
+                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=600&auto=format&fit=crop" alt="Estrutura de forno de pizza" class="card-img">
+                <div class="card-content">
+                    <h3>🔥 Infraestrutura Própria</h3>
+                    <p>Fornecemos maquinário profissional, fornos de alta performance e utensílios de corte. Cuidamos de toda a dinâmica operacional nos bastidores.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Sugestão: Foto real do Dimitry abrindo a massa -->
+                <img src="https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?q=80&w=600&auto=format&fit=crop" alt="Pizzaiolo preparando a massa com farinha na mesa" class="card-img">
+                <div class="card-content">
+                    <h3>🍅 Rigor Artesanal</h3>
+                    <p>Trabalhamos com massa de longa fermentação, ingredientes selecionados e pizzas artesanais de 35cm abertas e assadas no local da festa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápios -->
+    <section class="container" style="background-color: #f5f1ea; padding: 100px 24px; margin: 0 -24px;">
+        <div class="container">
+            <h2>Nossas Criações Gastronômicas</h2>
+            
+            <!-- Bloco de Pizzas -->
+            <div class="menu-row">
+                <div class="menu-text">
+                    <div class="menu-category">
+                        <h3>Pizzas Artesanais</h3>
+                        <div class="menu-note">Variedade garantida para agradar todos os paladares.</div>
+                        <ul>
+                            <li><strong>Clássicas:</strong> Calabresa, Calabresa e Cebola, Margherita, Quatro Queijos, Portuguesa e Napolitana.</li>
+                            <li><strong>Especiais:</strong> Pepperoni, Pepperoni e Rúcula, Bacon e Palmito, Siciliana e Atum com Cebola e Requeijão.</li>
+                            <li><strong>Gourmet:</strong> Alho e Mel, Rúcula e Tomate Seco, Marinara, Prosciutto com Muçarela de Búfala e Figo com Gorgonzola.</li>
+                            <li><strong>Doces:</strong> Romeu, Bacon e Julieta, Banana com Canela, Suspiros com Mel e Italiana (Chocolate com Morango).</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu-image-container">
+                    <!-- Sugestão: Foto real de uma pizza da marca cortada na mesa do evento -->
+                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=800&auto=format&fit=crop" alt="Pizza Gourmet Artesanal de Longa Fermentação">
+                </div>
+            </div>
+
+            <!-- Bloco de Frios -->
+            <div class="menu-row reverse">
+                <div class="menu-text">
+                    <div class="menu-category">
+                        <h3>Curadoria de Petiscos & Frios Finos</h3>
+                        <div class="menu-note">*Consulte a adição destas tábuas ao seu pacote de pizzas.</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">Seleção</th>
+                                    <th>Composição da Linha</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Rimini</strong></td>
+                                    <td>Cornicione crocante, Brusquetta tradicional, Crostini e Rotolo di Pizza finamente recheado.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ricconi</strong></td>
+                                    <td>Tábuas selecionadas (300g a 900g): Trio Curados premium, Trio de Queijos Nobres, seleção de Azeitonas, Frutas Secas e Frescas.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Amalfi</strong></td>
+                                    <td>Spiedo Napoli, Spiedo Firenze, Spiedo Roma e Spiedo Veneza (Porções sofisticadas compostas por 6 espetinhos finos).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="menu-image-container">
+                    <!-- A imagem solicitada pelo usuário foi mantida. Sugestão futura: usar fotos reais das TÁBUAS oferecidas -->
+                    <img src="https://source.unsplash.com/8e_HY5Lh8Ec/800x800" alt="Bandeja de madeira com frios curados, bacon, salames e vegetais">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prova Social (Nova Seção) -->
+    <section class="social-proof">
+        <div class="container">
+            <h2>Experiência Aprovada</h2>
+            <p>Mais do que serviço, entregamos memórias ao redor da mesa.</p>
+            <!-- Espaço reservado para colocar fotos ou depoimentos em atualizações futuras -->
+            <p style="font-style: italic; color: var(--accent-color);">"A melhor escolha que fiz para o meu aniversário. Não me preocupei com nada e a pizza estava incrível!"<br><br>— (Espaço para depoimentos reais de clientes)</p>
+        </div>
+    </section>
+
+    <!-- Perguntas Frequentes -->
+    <section class="container">
+        <h2>Perguntas Frequentes</h2>
+        <p class="section-subtitle">Tudo o que você precisa saber antes de reservar sua data.</p>
+        
+        <div class="faq-container">
+            <details>
+                <summary>Qual é o número mínimo de pessoas?</summary>
+                <p>Estruturamos pacotes personalizados para eventos a partir de 12 convidados, garantindo a dinâmica perfeita de um rodízio particular.</p>
+            </details>
+            
+            <details>
+                <summary>Crianças pagam?</summary>
+                <p>Crianças até 3 anos são nossa cortesia. De 4 a 12 anos pagam 50% do valor. A partir de 13 anos, o investimento é integral.</p>
+            </details>
+            
+            <details>
+                <summary>As bebidas estão incluídas?</summary>
+                <p>Não. Nosso foco é 100% na experiência gastronômica da pizza e frios. O fornecimento de bebidas, taças, louças e toalhas de mesa fica por conta do anfitrião.</p>
+            </details>
+            
+            <details>
+                <summary>O local precisa ter alguma estrutura específica?</summary>
+                <p>Nós levamos nossos fornos, mas é necessário validar previamente com o espaço ou condomínio a permissão para uso de equipamentos elétricos de alta potência.</p>
+            </details>
+
+            <details>
+                <summary>Qual é o valor do investimento?</summary>
+                <p>O investimento varia conforme o número de pessoas, escolha do cardápio (adição de frios, etc.), data e local. Entre em contato para receber uma proposta personalizada para a sua festa.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <h3>Sua próxima celebração merece essa experiência</h3>
+            <div class="footer-sub">Informe a data, o local e a quantidade estimada de convidados para receber uma proposta.</div>
+            
+            <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20consultar%20o%20rodízio%20de%20pizza%20em%20casa.%0A%0AData%20do%20evento:%0ALocal:%0ANúmero%20estimado%20de%20convidados:%0ATipo%20de%20celebração:" class="btn btn-whatsapp" target="_blank">💬 Consultar Disponibilidade</a>
+            
+            <div style="margin-top: 60px;">
+                <p><strong>O Pizzaiolo — Experiências gastronômicas para eventos</strong></p>
+                <p>Foz do Iguaçu - Paraná</p>
+                <p>Organização técnica: Dimitry Barcellos</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
