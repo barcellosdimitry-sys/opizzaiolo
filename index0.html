@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Pizzaiolo - Experiências Gastronômicas para Eventos</title>
-    <!-- Fontes Premium de Alta Gastronomia -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --accent-color: #c07d5c; /* Terracota Gourmet */
+            --accent-color: #c07d5c;
             --accent-dark: #a16243;
             --bg-dark: #121212;
-            --bg-light: #faf7f2; /* Creme Suave */
+            --bg-light: #faf7f2;
             --text-dark: #2c2a29;
             --text-muted: #6e6a68;
             --whatsapp-color: #25D366;
@@ -35,13 +34,12 @@
             padding: 0 24px;
         }
 
-        /* Hero Header Atualizado */
+        /* Hero Header */
         header {
             background-color: var(--bg-dark);
             color: white;
             text-align: center;
             padding: 140px 24px;
-            /* Sugestão: Trocar por foto real ampla de uma celebração com o pizzaiolo trabalhando */
             background-image: linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -82,7 +80,6 @@
             text-transform: uppercase;
         }
 
-        /* Botão Elegante */
         .btn {
             display: inline-block;
             background-color: transparent;
@@ -105,11 +102,8 @@
             transform: translateY(-3px);
         }
 
-        /* Seções */
-        section {
-            padding: 90px 0;
-        }
-
+        section { padding: 90px 0; }
+        
         h2 {
             font-family: 'Cormorant Garamond', serif;
             color: var(--text-dark);
@@ -120,9 +114,7 @@
             letter-spacing: 1px;
         }
 
-        h2.no-after::after {
-            display: none;
-        }
+        h2.no-after::after { display: none; }
 
         .section-subtitle {
             text-align: center;
@@ -134,7 +126,6 @@
             margin-right: auto;
         }
 
-        /* Ocasiões (Tags) */
         .occasions-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -152,317 +143,187 @@
             background-color: transparent;
         }
 
-        /* Passos (Como Funciona) */
-        .steps-grid {
-            display: flex;
-            gap: 30px;
-            margin-top: 50px;
-        }
+        .steps-grid { display: flex; gap: 30px; margin-top: 50px; }
+        .step-card { flex: 1; text-align: center; padding: 30px; background: white; border: 1px solid #eeebe5; }
+        .step-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--accent-color); margin-bottom: 15px; }
+        .step-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--text-dark); }
+        .step-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
-        .step-card {
-            flex: 1;
-            text-align: center;
-            padding: 30px;
-            background: white;
-            border: 1px solid #eeebe5;
-        }
+        .grid-3 { display: flex; gap: 35px; flex-wrap: wrap; }
+        .card { flex: 1; min-width: 300px; background: white; border: 1px solid #eeebe5; text-align: center; transition: all 0.3s ease; }
+        .card:hover { border-color: var(--accent-color); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .card-img { width: 100%; height: 240px; object-fit: cover; }
+        .card-content { padding: 35px 25px; }
+        .card h3 { font-family: 'Cormorant Garamond', serif; color: var(--text-dark); margin-top: 0; font-size: 1.8rem; font-weight: 600; }
+        .card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
 
-        .step-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            color: var(--accent-color);
+        .menu-row { display: flex; gap: 60px; align-items: center; margin-bottom: 80px; }
+        .menu-row.reverse { flex-direction: row-reverse; }
+        .menu-text { flex: 1.2; }
+        .menu-image-container { flex: 1; height: 520px; box-shadow: 15px 15px 0px var(--accent-color); overflow: hidden; }
+        .menu-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .menu-image-container:hover img { transform: scale(1.03); }
+
+        .menu-category h3 { font-family: 'Cormorant Garamond', serif; color: var(--text-dark); font-size: 2.3rem; margin-top: 0; font-weight: 600; margin-bottom: 5px; }
+        .menu-category .menu-note { font-size: 0.9rem; color: var(--accent-color); font-style: italic; margin-bottom: 25px; }
+
+        /* --- Início dos Estilos para os Botões dos Sabores --- */
+        .pizza-category-title {
+            font-weight: 600;
+            margin-top: 25px;
             margin-bottom: 15px;
-        }
-
-        .step-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-        }
-
-        .step-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Grid de Experiência (O que está incluído) */
-        .grid-3 {
-            display: flex;
-            gap: 35px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            border: 1px solid #eeebe5;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 35px 25px;
-        }
-
-        .card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--text-dark);
-            margin-top: 0;
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* Layout do Cardápio */
-        .menu-row {
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 80px;
-        }
-
-        .menu-row.reverse {
-            flex-direction: row-reverse;
-        }
-
-        .menu-text {
-            flex: 1.2;
-        }
-
-        .menu-image-container {
-            flex: 1;
-            height: 520px;
-            box-shadow: 15px 15px 0px var(--accent-color);
-            overflow: hidden;
-        }
-
-        .menu-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .menu-image-container:hover img {
-            transform: scale(1.03);
-        }
-
-        .menu-category h3 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--text-dark);
-            font-size: 2.3rem;
-            margin-top: 0;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .menu-category .menu-note {
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            font-style: italic;
-            margin-bottom: 25px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            padding: 12px 0;
-            border-bottom: 1px solid #eae6df;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        ul li strong {
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-
-        /* Tabelas */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 16px 10px;
-            text-align: left;
-            border-bottom: 1px solid #eae6df;
-        }
-
-        th {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--accent-color);
-            font-weight: 600;
+            color: var(--accent-dark);
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
-        td strong {
-            font-size: 1rem;
-            color: var(--text-dark);
-        }
-
-        /* FAQ - Perguntas Frequentes */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        details {
-            background-color: white;
-            border: 1px solid #eeebe5;
-            margin-bottom: 10px;
-            padding: 20px;
-            border-radius: 4px;
-        }
-
-        details[open] {
-            border-left: 4px solid var(--accent-color);
-        }
-
-        summary {
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            list-style: none;
+        .pizza-tags {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        summary::after {
-            content: '+';
-            color: var(--accent-color);
-            font-size: 1.5rem;
-        }
-
-        details[open] summary::after {
-            content: '-';
-        }
-
-        details p {
-            margin-top: 15px;
-            margin-bottom: 0;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Prova Social Placeholder */
-        .social-proof {
-            background-color: #171615;
-            color: white;
-            text-align: center;
-            padding: 80px 24px;
-        }
-        .social-proof h2 {
-            color: white;
-        }
-        .social-proof p {
-            color: #a8a4a1;
-            margin-bottom: 30px;
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: #121212;
-            color: white;
-            text-align: center;
-            padding: 90px 24px;
-        }
-
-        footer h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.4rem;
-            margin-bottom: 10px;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        footer .footer-sub {
-            color: var(--accent-color);
-            font-style: italic;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-
-        footer p {
-            margin: 8px 0;
-            color: #a8a4a1;
-            font-weight: 300;
-            font-size: 0.95rem;
-        }
-
-        footer .btn-whatsapp {
-            background-color: var(--whatsapp-color);
-            border: none;
+        .pizza-btn {
+            background: white;
+            border: 1px solid #eae6df;
+            padding: 10px 18px;
             border-radius: 4px;
-            margin-top: 30px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .pizza-btn:hover {
+            border-color: var(--accent-color);
+            background-color: var(--accent-color);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(192, 125, 92, 0.2);
+        }
+        /* --- Fim dos Estilos para os Botões dos Sabores --- */
+
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 16px 10px; text-align: left; border-bottom: 1px solid #eae6df; }
+        th { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        td strong { font-size: 1rem; color: var(--text-dark); }
+
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        details { background-color: white; border: 1px solid #eeebe5; margin-bottom: 10px; padding: 20px; border-radius: 4px; }
+        details[open] { border-left: 4px solid var(--accent-color); }
+        summary { font-weight: 600; font-size: 1.1rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; color: var(--accent-color); font-size: 1.5rem; }
+        details[open] summary::after { content: '-'; }
+        details p { margin-top: 15px; margin-bottom: 0; color: var(--text-muted); line-height: 1.6; }
+
+        .social-proof { background-color: #171615; color: white; text-align: center; padding: 80px 24px; }
+        .social-proof h2 { color: white; }
+        .social-proof p { color: #a8a4a1; margin-bottom: 30px; }
+
+        footer { background-color: #121212; color: white; text-align: center; padding: 90px 24px; }
+        footer h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; margin-bottom: 10px; font-weight: 500; letter-spacing: 1px; }
+        footer .footer-sub { color: var(--accent-color); font-style: italic; margin-bottom: 30px; font-size: 1.1rem; }
+        footer p { margin: 8px 0; color: #a8a4a1; font-weight: 300; font-size: 0.95rem; }
+        footer .btn-whatsapp { background-color: var(--whatsapp-color); border: none; border-radius: 4px; margin-top: 30px; color: white; font-weight: 600; }
+        footer .btn-whatsapp:hover { background-color: #1ebe57; }
+
+        /* --- Início dos Estilos do Modal (Popup de Imagem) --- */
+        .modal {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(18, 18, 18, 0.9); /* Fundo escuro semi-transparente */
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 15px;
             font-weight: 600;
         }
-        
-        footer .btn-whatsapp:hover {
-            background-color: #1ebe57;
+
+        .modal-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
         }
 
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--accent-color);
+        }
+        /* --- Fim dos Estilos do Modal --- */
+
+        /* Design Responsivo para Mobile */
         @media (max-width: 900px) {
             header h1 { font-size: 2.5rem; }
-            .menu-row, .menu-row.reverse {
-                flex-direction: column;
-                gap: 40px;
-            }
-            .menu-image-container {
-                width: 100%;
-                height: 350px;
-                box-shadow: 10px 10px 0px var(--accent-color);
-            }
+            .menu-row, .menu-row.reverse { flex-direction: column; gap: 40px; }
+            .menu-image-container { width: 100%; height: 350px; box-shadow: 10px 10px 0px var(--accent-color); }
             .steps-grid { flex-direction: column; }
             h2 { font-size: 2.3rem; }
+            .modal-img { height: 250px; } /* Ajuste de altura da foto no celular */
         }
     </style>
 </head>
 <body>
 
-    <!-- Abertura Estratégica focada no "Desejo" -->
     <header>
         <div class="container">
             <div class="brand">O PIZZAIOLO</div>
             <h1>Rodízio de pizza artesanal<br>na sua casa ou evento</h1>
             <p class="hero-text">Levamos forno, ingredientes e equipe para preparar pizzas na hora durante três horas. Você reúne os convidados. Nós cuidamos da experiência gastronômica.</p>
             <div class="hero-info">Atendimento em Foz do Iguaçu | A partir de 12 pessoas</div>
-            <!-- Link pré-preenchido para o briefing -->
             <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20consultar%20o%20rodízio%20de%20pizza%20em%20casa.%0A%0AData%20do%20evento:%0ALocal:%0ANúmero%20estimado%20de%20convidados:%0ATipo%20de%20celebração:" class="btn" target="_blank">Consultar Disponibilidade</a>
         </div>
     </header>
 
-    <!-- Ocasiões de Uso -->
     <section class="container" style="padding-top: 60px; padding-bottom: 60px;">
         <h2 class="no-after" style="font-size: 2rem; margin-bottom: 10px;">Para quais ocasiões?</h2>
         <p class="section-subtitle" style="margin-bottom: 20px;">Transformamos diferentes tipos de encontro em uma verdadeira pizzaria particular.</p>
@@ -475,11 +336,9 @@
         </div>
     </section>
 
-    <!-- Como Funciona (Escaneável) -->
     <section class="container" style="background-color: white; padding: 80px 40px; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
         <h2>Como Funciona</h2>
         <p class="section-subtitle">Em apenas três passos, você garante tranquilidade para receber seus convidados.</p>
-        
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">01</div>
@@ -499,63 +358,90 @@
         </div>
     </section>
 
-    <!-- O que está incluído (Estrutura operacional) -->
     <section class="container">
         <h2>O que está incluído na experiência</h2>
         <div class="grid-3">
             <div class="card">
-                <!-- Sugestão: Foto real de pizzas saindo do forno no evento -->
-                <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?q=80&w=600&auto=format&fit=crop" alt="Pizza assando em forno de alta temperatura" class="card-img">
+                <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?q=80&w=600&auto=format&fit=crop" alt="Pizza assando" class="card-img">
                 <div class="card-content">
                     <h3>⏳ Duração e Serviço</h3>
-                    <p>Durante três horas de preparo e serviço no local, as pizzas saem do forno em sequência, garantindo variedade, temperatura e ritmo de serviço ideal.</p>
+                    <p>Durante três horas de preparo e serviço no local, as pizzas saem do forno em sequência, garantindo variedade e temperatura ideal.</p>
                 </div>
             </div>
             <div class="card">
-                <!-- Sugestão: Foto real do forno montado em um local de evento -->
-                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=600&auto=format&fit=crop" alt="Estrutura de forno de pizza" class="card-img">
+                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=600&auto=format&fit=crop" alt="Estrutura de forno" class="card-img">
                 <div class="card-content">
                     <h3>🔥 Infraestrutura Própria</h3>
-                    <p>Fornecemos maquinário profissional, fornos de alta performance e utensílios de corte. Cuidamos de toda a dinâmica operacional nos bastidores.</p>
+                    <p>Fornecemos maquinário profissional, fornos de alta performance e utensílios de corte. Cuidamos de toda a dinâmica operacional.</p>
                 </div>
             </div>
             <div class="card">
-                <!-- Sugestão: Foto real do Dimitry abrindo a massa -->
-                <img src="https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?q=80&w=600&auto=format&fit=crop" alt="Pizzaiolo preparando a massa com farinha na mesa" class="card-img">
+                <img src="https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?q=80&w=600&auto=format&fit=crop" alt="Pizzaiolo" class="card-img">
                 <div class="card-content">
                     <h3>🍅 Rigor Artesanal</h3>
-                    <p>Trabalhamos com massa de longa fermentação, ingredientes selecionados e pizzas artesanais de 35cm abertas e assadas no local da festa.</p>
+                    <p>Trabalhamos com massa de longa fermentação, ingredientes selecionados e pizzas artesanais de 35cm abertas no local da festa.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cardápios -->
     <section class="container" style="background-color: #f5f1ea; padding: 100px 24px; margin: 0 -24px;">
         <div class="container">
             <h2>Nossas Criações Gastronômicas</h2>
             
-            <!-- Bloco de Pizzas -->
             <div class="menu-row">
                 <div class="menu-text">
                     <div class="menu-category">
                         <h3>Pizzas Artesanais</h3>
-                        <div class="menu-note">Variedade garantida para agradar todos os paladares.</div>
-                        <ul>
-                            <li><strong>Clássicas:</strong> Calabresa, Calabresa e Cebola, Margherita, Quatro Queijos, Portuguesa e Napolitana.</li>
-                            <li><strong>Especiais:</strong> Pepperoni, Pepperoni e Rúcula, Bacon e Palmito, Siciliana e Atum com Cebola e Requeijão.</li>
-                            <li><strong>Gourmet:</strong> Alho e Mel, Rúcula e Tomate Seco, Marinara, Prosciutto com Muçarela de Búfala e Figo com Gorgonzola.</li>
-                            <li><strong>Doces:</strong> Romeu, Bacon e Julieta, Banana com Canela, Suspiros com Mel e Italiana (Chocolate com Morango).</li>
-                        </ul>
+                        <div class="menu-note">Toque nos botões para visualizar a apresentação de cada sabor.</div>
+                        
+                        <!-- Sabores Clássicos -->
+                        <div class="pizza-category-title">Clássicas</div>
+                        <div class="pizza-tags">
+                            <button class="pizza-btn" onclick="openModal('Calabresa', 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=800&auto=format&fit=crop')">Calabresa</button>
+                            <button class="pizza-btn" onclick="openModal('Calabresa e Cebola', 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=800&auto=format&fit=crop')">Calabresa e Cebola</button>
+                            <button class="pizza-btn" onclick="openModal('Margherita', 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=800&auto=format&fit=crop')">Margherita</button>
+                            <button class="pizza-btn" onclick="openModal('Quatro Queijos', 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&auto=format&fit=crop')">Quatro Queijos</button>
+                            <button class="pizza-btn" onclick="openModal('Portuguesa', 'https://images.unsplash.com/photo-1518110929161-5ef0f6e56843?q=80&w=800&auto=format&fit=crop')">Portuguesa</button>
+                            <button class="pizza-btn" onclick="openModal('Napolitana', 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop')">Napolitana</button>
+                        </div>
+
+                        <!-- Sabores Especiais -->
+                        <div class="pizza-category-title">Especiais</div>
+                        <div class="pizza-tags">
+                            <button class="pizza-btn" onclick="openModal('Pepperoni', 'https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800&auto=format&fit=crop')">Pepperoni</button>
+                            <button class="pizza-btn" onclick="openModal('Pepperoni e Rúcula', 'https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800&auto=format&fit=crop')">Pepperoni e Rúcula</button>
+                            <button class="pizza-btn" onclick="openModal('Bacon e Palmito', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop')">Bacon e Palmito</button>
+                            <button class="pizza-btn" onclick="openModal('Siciliana', 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=800&auto=format&fit=crop')">Siciliana</button>
+                            <button class="pizza-btn" onclick="openModal('Atum, Cebola e Requeijão', 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=800&auto=format&fit=crop')">Atum, Cebola e Requeijão</button>
+                        </div>
+
+                        <!-- Sabores Gourmet -->
+                        <div class="pizza-category-title">Gourmet</div>
+                        <div class="pizza-tags">
+                            <button class="pizza-btn" onclick="openModal('Alho e Mel', 'https://images.unsplash.com/photo-1576458088443-04a19bb13da6?q=80&w=800&auto=format&fit=crop')">Alho e Mel</button>
+                            <button class="pizza-btn" onclick="openModal('Rúcula e Tomate Seco', 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?q=80&w=800&auto=format&fit=crop')">Rúcula e Tomate Seco</button>
+                            <button class="pizza-btn" onclick="openModal('Marinara', 'https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?q=80&w=800&auto=format&fit=crop')">Marinara</button>
+                            <button class="pizza-btn" onclick="openModal('Prosciutto com Muçarela', 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?q=80&w=800&auto=format&fit=crop')">Prosciutto c/ Muçarela</button>
+                            <button class="pizza-btn" onclick="openModal('Figo com Gorgonzola', 'https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800&auto=format&fit=crop')">Figo c/ Gorgonzola</button>
+                        </div>
+
+                        <!-- Sabores Doces -->
+                        <div class="pizza-category-title">Doces</div>
+                        <div class="pizza-tags">
+                            <button class="pizza-btn" onclick="openModal('Romeu, Bacon e Julieta', 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&auto=format&fit=crop')">Romeu, Bacon e Julieta</button>
+                            <button class="pizza-btn" onclick="openModal('Banana com Canela', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop')">Banana com Canela</button>
+                            <button class="pizza-btn" onclick="openModal('Suspiros com Mel', 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=800&auto=format&fit=crop')">Suspiros com Mel</button>
+                            <button class="pizza-btn" onclick="openModal('Italiana', 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?q=80&w=800&auto=format&fit=crop')">Italiana (Choc/Morango)</button>
+                        </div>
+
                     </div>
                 </div>
                 <div class="menu-image-container">
-                    <!-- Sugestão: Foto real de uma pizza da marca cortada na mesa do evento -->
-                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=800&auto=format&fit=crop" alt="Pizza Gourmet Artesanal de Longa Fermentação">
+                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=800&auto=format&fit=crop" alt="Pizza Gourmet Artesanal">
                 </div>
             </div>
 
-            <!-- Bloco de Frios -->
             <div class="menu-row reverse">
                 <div class="menu-text">
                     <div class="menu-category">
@@ -579,71 +465,55 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Amalfi</strong></td>
-                                    <td>Spiedo Napoli, Spiedo Firenze, Spiedo Roma e Spiedo Veneza (Porções sofisticadas compostas por 6 espetinhos finos).</td>
+                                    <td>Spiedo Napoli, Spiedo Firenze, Spiedo Roma e Spiedo Veneza (6 espetinhos finos).</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="menu-image-container">
-                    <!-- A imagem solicitada pelo usuário foi mantida. Sugestão futura: usar fotos reais das TÁBUAS oferecidas -->
-                    <img src="https://source.unsplash.com/8e_HY5Lh8Ec/800x800" alt="Bandeja de madeira com frios curados, bacon, salames e vegetais">
+                    <img src="https://images.unsplash.com/photo-1556040220-4096d522378d?q=80&w=800&auto=format&fit=crop" alt="Bandeja de madeira com frios">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Prova Social (Nova Seção) -->
     <section class="social-proof">
         <div class="container">
             <h2>Experiência Aprovada</h2>
             <p>Mais do que serviço, entregamos memórias ao redor da mesa.</p>
-            <!-- Espaço reservado para colocar fotos ou depoimentos em atualizações futuras -->
-            <p style="font-style: italic; color: var(--accent-color);">"A melhor escolha que fiz para o meu aniversário. Não me preocupei com nada e a pizza estava incrível!"<br><br>— (Espaço para depoimentos reais de clientes)</p>
+            <p style="font-style: italic; color: var(--accent-color);">"A melhor escolha que fiz para o meu evento. Não me preocupei com nada e a pizza estava incrível!"<br><br>— (Espaço para depoimentos reais)</p>
         </div>
     </section>
 
-    <!-- Perguntas Frequentes -->
     <section class="container">
         <h2>Perguntas Frequentes</h2>
         <p class="section-subtitle">Tudo o que você precisa saber antes de reservar sua data.</p>
-        
         <div class="faq-container">
             <details>
                 <summary>Qual é o número mínimo de pessoas?</summary>
-                <p>Estruturamos pacotes personalizados para eventos a partir de 12 convidados, garantindo a dinâmica perfeita de um rodízio particular.</p>
+                <p>Estruturamos pacotes personalizados para eventos a partir de 12 convidados.</p>
             </details>
-            
             <details>
                 <summary>Crianças pagam?</summary>
-                <p>Crianças até 3 anos são nossa cortesia. De 4 a 12 anos pagam 50% do valor. A partir de 13 anos, o investimento é integral.</p>
+                <p>Crianças até 3 anos são nossa cortesia. De 4 a 12 anos pagam 50% do valor.</p>
             </details>
-            
             <details>
                 <summary>As bebidas estão incluídas?</summary>
-                <p>Não. Nosso foco é 100% na experiência gastronômica da pizza e frios. O fornecimento de bebidas, taças, louças e toalhas de mesa fica por conta do anfitrião.</p>
+                <p>Não. Nosso foco é 100% na experiência gastronômica da pizza e frios.</p>
             </details>
-            
             <details>
                 <summary>O local precisa ter alguma estrutura específica?</summary>
-                <p>Nós levamos nossos fornos, mas é necessário validar previamente com o espaço ou condomínio a permissão para uso de equipamentos elétricos de alta potência.</p>
-            </details>
-
-            <details>
-                <summary>Qual é o valor do investimento?</summary>
-                <p>O investimento varia conforme o número de pessoas, escolha do cardápio (adição de frios, etc.), data e local. Entre em contato para receber uma proposta personalizada para a sua festa.</p>
+                <p>Nós levamos nossos fornos, mas é necessário validar o uso de equipamentos elétricos com o local.</p>
             </details>
         </div>
     </section>
 
-    <!-- Rodapé -->
     <footer>
         <div class="container">
             <h3>Sua próxima celebração merece essa experiência</h3>
-            <div class="footer-sub">Informe a data, o local e a quantidade estimada de convidados para receber uma proposta.</div>
-            
+            <div class="footer-sub">Informe a data, o local e a quantidade de convidados para receber uma proposta.</div>
             <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20consultar%20o%20rodízio%20de%20pizza%20em%20casa.%0A%0AData%20do%20evento:%0ALocal:%0ANúmero%20estimado%20de%20convidados:%0ATipo%20de%20celebração:" class="btn btn-whatsapp" target="_blank">💬 Consultar Disponibilidade</a>
-            
             <div style="margin-top: 60px;">
                 <p><strong>O Pizzaiolo — Experiências gastronômicas para eventos</strong></p>
                 <p>Foz do Iguaçu - Paraná</p>
@@ -651,6 +521,51 @@
             </div>
         </div>
     </footer>
+
+    <!-- --- Estrutura do Modal (Popup de Imagem) --- -->
+    <div id="pizzaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 class="modal-title" id="modalTitle">Nome da Pizza</h3>
+            <img id="modalImg" class="modal-img" src="" alt="Imagem da Pizza">
+        </div>
+    </div>
+
+    <!-- --- Script para controle do Modal --- -->
+    <script>
+        // Função para abrir o modal e inserir título e imagem dinamicamente
+        function openModal(pizzaName, imageUrl) {
+            document.getElementById('modalTitle').innerText = pizzaName;
+            document.getElementById('modalImg').src = imageUrl;
+            
+            // Exibe a janela adicionando a classe 'show'
+            document.getElementById('pizzaModal').classList.add('show');
+            
+            // Bloqueia a barra de rolagem da página por trás do popup
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            document.getElementById('pizzaModal').classList.remove('show');
+            document.body.style.overflow = 'auto'; // Restaura a rolagem da página
+        }
+
+        // Permite fechar o modal clicando no espaço escuro ao redor
+        window.onclick = function(event) {
+            const modal = document.getElementById('pizzaModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        // Permite fechar o modal apertando a tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
 
 </body>
 </html>
