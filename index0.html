@@ -1,11 +1,98 @@
+<!-- ==========================================
+     INÍCIO DO ESTILO (CSS)
+     Pode ser colocado no arquivo CSS do site ou mantido aqui
+=========================================== -->
+<style>
+  /* Oculta a seta nativa do navegador para um visual mais limpo */
+  .menu-item-accordion summary {
+    list-style: none; /* Para Firefox */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 1.1em;
+  }
+  .menu-item-accordion summary::-webkit-details-marker {
+    display: none; /* Para Chrome e Safari */
+  }
+
+  /* Estilização dos títulos e ícones */
+  .menu-item-accordion .item-name {
+    font-weight: bold;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .menu-item-accordion .icon {
+    font-weight: bold;
+    color: #333333;
+  }
+
+  /* Estilo para as etiquetas (Badges) de destaque */
+  .badge {
+    font-size: 0.65em;
+    background-color: #B8860B; /* Tom de dourado elegante */
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Conteúdo interno da sanfona */
+  .accordion-content {
+    padding: 15px 0;
+    color: #555555;
+    line-height: 1.6;
+  }
+  .accordion-content ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+  }
+
+  /* Estilo do Botão de Compra Rápida */
+  .btn-add-pacote {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2E8B57; /* Verde elegante */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  .btn-add-pacote:hover {
+    background-color: #236B43;
+  }
+
+  /* Textos de cabeçalho */
+  .menu-category h2 {
+    margin-bottom: 5px;
+    color: #222222;
+  }
+  .menu-category .subtitle {
+    color: #777777;
+    font-style: italic;
+    margin-bottom: 25px;
+  }
+</style>
+
+<!-- ==========================================
+     INÍCIO DA ESTRUTURA DO CARDÁPIO (HTML)
+=========================================== -->
 <section class="menu-category">
   <h2>Curadoria de Petiscos & Frios Finos</h2>
   <p class="subtitle">Consulte a adição destas tábuas ao seu pacote de pizzas.</p>
 
-  <!-- Item: Rimini -->
+  <!-- Linha Rimini -->
   <details class="menu-item-accordion">
     <summary>
-      <span class="item-name">Rimini</span>
+      <span class="item-name">Rimini <span class="badge">Clássico</span></span>
       <span class="icon">+</span>
     </summary>
     <div class="accordion-content">
@@ -13,13 +100,14 @@
       <ul>
         <li><strong>Composição:</strong> Cornicione crocante, Brusquetta tradicional, Crostini e Rotolo di Pizza finamente recheado.</li>
       </ul>
+      <a href="#" class="btn-add-pacote">Adicionar ao Pacote</a>
     </div>
   </details>
 
-  <!-- Item: Ricconi -->
+  <!-- Linha Ricconi -->
   <details class="menu-item-accordion">
     <summary>
-      <span class="item-name">Ricconi</span>
+      <span class="item-name">Ricconi <span class="badge">Premium</span></span>
       <span class="icon">+</span>
     </summary>
     <div class="accordion-content">
@@ -27,20 +115,22 @@
       <ul>
         <li><strong>Composição (300g a 900g):</strong> Trio Curados premium, Trio de Queijos Nobres, seleção de Azeitonas, Frutas Secas e Frescas.</li>
       </ul>
+      <a href="#" class="btn-add-pacote">Adicionar ao Pacote</a>
     </div>
   </details>
 
-  <!-- Item: Amalfi -->
+  <!-- Linha Amalfi -->
   <details class="menu-item-accordion">
     <summary>
-      <span class="item-name">Amalfi</span>
+      <span class="item-name">Amalfi <span class="badge">Especial</span></span>
       <span class="icon">+</span>
     </summary>
     <div class="accordion-content">
-      <p class="item-description">Seleção de espetinhos finos inspirados nas regiões da Itália.</p>
+      <p class="item-description">Seleção de espetinhos finos, uma curadoria inspirada nas regiões da Itália.</p>
       <ul>
         <li><strong>Composição:</strong> Spiedo Napoli, Spiedo Firenze, Spiedo Roma e Spiedo Veneza (6 espetinhos finos).</li>
       </ul>
+      <a href="#" class="btn-add-pacote">Adicionar ao Pacote</a>
     </div>
   </details>
 
