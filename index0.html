@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Pizzaiolo - Pizza Artesanal no seu Evento</title>
 
+    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --accent-color: #d46b38;       
-            --accent-dark: #b05528;        
-            --accent-gold: #e0a353;        
+            --accent-color: #d46b38;       /* Laranja brasa */
+            --accent-dark: #b05528;        /* Laranja escuro / Hover */
+            --accent-gold: #e0a353;        /* Tom trigo/ouro */
             --bg-dark-warm: #1a0a05;       
             --bg-light: #faf7f2;
             --text-light: #ffffff;         
             --text-dark: #2c2a29;
-            --text-muted: #f2ebe6; /* Mais claro para destacar do fundo */
+            --text-muted: #f2ebe6;
         }
 
         body {
@@ -41,8 +42,8 @@
             background-color: var(--bg-dark-warm);
             color: var(--text-light);
             text-align: center;
-            padding: 130px 24px 150px 24px;
-            /* Máscara neutra (carvão escuro) para cortar o excesso de vermelho atrás do texto */
+            padding: 120px 24px 140px 24px;
+            /* Máscara tom carvão escuro para contraste impecável e redução de tom vermelho */
             background-image: 
                 radial-gradient(circle, rgba(18, 12, 10, 0.65) 0%, rgba(10, 5, 2, 0.92) 100%), 
                 url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg');
@@ -59,7 +60,7 @@
         }
 
         header .logo-img {
-            max-width: 250px; /* Levemente maior */
+            max-width: 250px; 
             height: auto;
             filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.95));
             transition: transform 0.3s ease;
@@ -69,48 +70,49 @@
             transform: scale(1.03);
         }
 
-        /* Título Principal Mais Robusto e com Sombra Dupla */
         header h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4.5rem; /* Aumentado */
-            font-weight: 700;  /* Mais grosso */
+            font-size: 4.5rem;
+            font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.15;
             color: #ffffff;
-            /* Sombra dura para recorte + sombra difusa para destaque */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.95), 0px 8px 24px rgba(0, 0, 0, 0.7);
         }
 
-        /* Texto de Apoio Mais Legível */
         header p.hero-text {
-            font-size: 1.3rem; /* Aumentado */
+            font-size: 1.25rem;
             max-width: 780px;
             margin: 0 auto 30px auto;
-            color: var(--text-light); /* Branco puro */
-            font-weight: 400; /* Removido o peso fino (300) */
+            color: var(--text-muted);
+            font-weight: 400;
             line-height: 1.6;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 1), 0px 4px 12px rgba(0, 0, 0, 0.6);
         }
 
-        /* Informação de Preço Mais Destacada */
         header .hero-info {
-            font-size: 1.1rem; /* Aumentado */
+            font-size: 1.1rem;
             color: var(--accent-gold);
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            font-weight: 700; /* Deixado em negrito */
+            font-weight: 700;
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
+        }
+
+        .cta-wrapper {
+            display: inline-block;
+            max-width: 550px;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
             color: white;
-            padding: 18px 48px;
+            padding: 20px 48px;
             text-decoration: none;
-            border-radius: 4px;
-            font-size: 1.05rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -126,15 +128,25 @@
             box-shadow: 0 15px 30px rgba(212, 107, 56, 0.6);
         }
 
+        /* Microcopy de Orientação abaixo do Botão */
+        .cta-note {
+            display: block;
+            font-size: 0.9rem;
+            color: #d1c7bd;
+            margin-top: 15px;
+            font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+        }
+
         /* RESPONSIVIDADE (Tablets e Celulares) */
         @media (max-width: 992px) {
             header h1 { font-size: 3.6rem; }
-            header p.hero-text { font-size: 1.2rem; }
+            header p.hero-text { font-size: 1.15rem; }
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 100px 20px 110px 20px;
+                padding: 90px 20px 100px 20px;
                 background-attachment: scroll; 
             }
             header .logo-img { max-width: 200px; }
@@ -146,13 +158,16 @@
         }
 
         @media (max-width: 480px) {
-            header h1 { font-size: 2.4rem; }
+            header h1 { font-size: 2.3rem; }
             header p.hero-text { font-size: 1.05rem; }
             .btn {
                 width: 100%; 
                 box-sizing: border-box;
-                padding: 16px 20px;
+                padding: 18px 20px;
                 font-size: 1rem;
+            }
+            .cta-note {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -161,19 +176,29 @@
 
     <header>
         <div class="container">
+            <!-- LOGO INTEGRADO -->
             <div class="brand-box">
                 <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/logosfun.jpg" alt="O Pizzaiolo" class="logo-img">
             </div>
             
-            <h1>Rodízio de pizza artesanal<br>na sua casa ou evento</h1>
+            <!-- TÍTULO PRINCIPAL -->
+            <h1>A verdadeira pizza artesanal<br>no seu evento</h1>
             
-            <p class="hero-text">Transforme o seu espaço com aromas, ingredientes frescos e pizzas montadas na hora. Você se dedica a criar memórias com seus convidados, nós cuidamos de toda a gastronomia.</p>
+            <!-- TEXTO EMOCIONAL E INFORMATIVO -->
+            <p class="hero-text">Nossa equipe transforma o seu espaço com aromas, ingredientes frescos e pizzas montadas na hora. Você se dedica a criar memórias com seus convidados, nós cuidamos de toda a gastronomia.</p>
             
+            <!-- ÂNCORA DE REGIONALIZAÇÃO E PREÇO -->
             <div class="hero-info">
-                Atendimento em Foz do Iguaçu &bull; A partir de R$ 60,00/pessoa (mínimo de 12 convidados)
+                Atendimento em Foz do Iguaçu &bull; A partir de R$ 60,00/pessoa (mínimo 12 pessoas)
             </div>
             
-            <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20consultar%20a%20experiência%20de%20pizzas%20para%20meu%20evento." class="btn" target="_blank">Consultar Disponibilidade</a>
+            <!-- BLOCO DE AÇÃO (CTA + MICROCOPY) -->
+            <div class="cta-wrapper">
+                <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20meu%20evento." class="btn" target="_blank">
+                    Solicitar Proposta Para Meu Evento
+                </a>
+                <span class="cta-note">Envie a data e o bairro do evento. Respondemos rapidamente no WhatsApp.</span>
+            </div>
         </div>
     </header>
 
