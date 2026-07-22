@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Pizzaiolo - Pizza Artesanal no seu Evento</title>
 
-    <!-- Fontes do Google: Cormorant Garamond (Elegante) e Plus Jakarta Sans (Moderna) -->
+    <!-- Fontes do Google: Cormorant Garamond e Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --accent-color: #d46b38;       /* Laranja brasa */
-            --accent-dark: #b05528;        /* Laranja escuro / Hover */
-            --accent-gold: #e0a353;        /* Tom de trigo/ouro para destaques */
-            --bg-dark-warm: #1a0a05;       /* Fundo escuro aquecido */
+            --accent-color: #d46b38;       
+            --accent-dark: #b05528;        
+            --accent-gold: #e0a353;        
+            --bg-dark-warm: #1a0a05;       
             --bg-light: #faf7f2;
-            --text-light: #f2ebe6;         /* Tom marfim para leitura suave */
+            --text-light: #f2ebe6;         
             --text-dark: #2c2a29;
             --text-muted: #d1c7bd;
         }
@@ -43,7 +43,6 @@
             color: var(--text-light);
             text-align: center;
             padding: 120px 24px 140px 24px;
-            /* Máscara radial leve mantendo o calor do fundo e vivacidade da foto */
             background-image: 
                 radial-gradient(circle, rgba(20, 8, 0, 0.20) 0%, rgba(20, 8, 0, 0.82) 100%), 
                 url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg');
@@ -52,14 +51,16 @@
             background-attachment: fixed;
         }
 
-        /* Destaque do Logo */
+        /* Destaque do Logo Ajustado */
         header .brand-box {
             margin-bottom: 25px;
-            display: inline-block;
+            display: flex; /* Garante centralização perfeita */
+            justify-content: center;
+            align-items: center;
         }
 
         header .logo-img {
-            max-width: 220px;
+            max-width: 240px; /* Tamanho levemente aumentado para leitura */
             height: auto;
             filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.85));
             transition: transform 0.3s ease;
@@ -131,9 +132,9 @@
 
     <header>
         <div class="container">
-            <!-- LOGO DA MARCA -->
+            <!-- LOGO DA MARCA COM LINK DIRETO PARA A VERSÃO "SEM FUNDO" -->
             <div class="brand-box">
-                <img src="LOGO.jpg" alt="O Pizzaiolo" class="logo-img">
+                <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/logosfun.jpg" alt="O Pizzaiolo" class="logo-img">
             </div>
             
             <h1>A verdadeira pizza artesanal<br>no seu evento</h1>
