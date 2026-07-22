@@ -17,6 +17,7 @@
             --accent-gold: #e0a353;        /* Tom trigo/ouro */
             --bg-dark-warm: #1a0a05;       
             --bg-light: #faf7f2;
+            --bg-salmon-transition: #f4e3dc; /* Tom salmão suave para transição coesa */
             --text-light: #ffffff;         
             --text-dark: #2c2a29;
             --text-muted: #f2ebe6;
@@ -43,7 +44,6 @@
             color: var(--text-light);
             text-align: center;
             padding: 120px 24px 140px 24px;
-            /* Máscara tom carvão escuro para contraste impecável e redução de tom vermelho */
             background-image: 
                 radial-gradient(circle, rgba(18, 12, 10, 0.65) 0%, rgba(10, 5, 2, 0.92) 100%), 
                 url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg');
@@ -128,7 +128,6 @@
             box-shadow: 0 15px 30px rgba(212, 107, 56, 0.6);
         }
 
-        /* Microcopy de Orientação abaixo do Botão */
         .cta-note {
             display: block;
             font-size: 0.9rem;
@@ -141,7 +140,7 @@
         /* SEÇÃO 2: BENEFÍCIOS / ALÍVIO DO ANFITRIÃO */
         .benefits-section {
             padding: 100px 24px;
-            background-color: var(--bg-light);
+            background-color: var(--bg-salmon-transition); /* Transição suave e limpa */
             text-align: center;
         }
 
@@ -160,49 +159,69 @@
 
         .section-header p {
             font-size: 1.15rem;
-            color: #5a5553;
+            color: #4a423e;
             line-height: 1.7;
         }
 
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 30px;
             max-width: 1140px;
             margin: 0 auto;
         }
 
         .benefit-card {
             background-color: #ffffff;
-            padding: 40px 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-bottom: 3px solid transparent;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
         }
 
         .benefit-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-bottom: 3px solid var(--accent-color);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
         }
 
-        .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
+        .benefit-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .benefit-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .benefit-card:hover .benefit-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .benefit-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .benefit-card h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             color: var(--text-dark);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            margin-top: 0;
         }
 
         .benefit-card p {
-            font-size: 1rem;
-            color: #6e6966;
+            font-size: 0.98rem;
+            color: #5e5754;
             line-height: 1.6;
             margin: 0;
         }
@@ -229,7 +248,7 @@
             .benefits-section { padding: 70px 24px; }
             .benefits-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 24px;
             }
             .section-header h2 { font-size: 2.2rem; }
             .section-header p { font-size: 1.05rem; }
@@ -286,25 +305,37 @@
             </div>
             
             <div class="benefits-grid">
-                <!-- Benefício 1 -->
+                <!-- Card 1 -->
                 <div class="benefit-card">
-                    <div class="benefit-icon">🥂</div>
-                    <h3>100% Livre da Cozinha</h3>
-                    <p>Esqueça o fogão, a reposição de comida e a pia cheia de louça. Nossa equipe opera todo o serviço para que você possa brindar e conversar sem interrupções.</p>
+                    <div class="benefit-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/001.jpg" alt="100% Livre da Cozinha">
+                    </div>
+                    <div class="benefit-content">
+                        <h3>100% Livre da Cozinha</h3>
+                        <p>Esqueça o fogão, a reposição de comida e a pia cheia de louça. Nossa equipe opera todo o serviço para que você possa brindar e conversar sem interrupções.</p>
+                    </div>
                 </div>
                 
-                <!-- Benefício 2 -->
+                <!-- Card 2 -->
                 <div class="benefit-card">
-                    <div class="benefit-icon">🔥</div>
-                    <h3>Fartura e Qualidade</h3>
-                    <p>Nada de comida fria. Nosso fluxo de serviço garante fatias recém-saídas do forno, com a massa perfeitamente assada e queijo derretido, do início ao fim da festa.</p>
+                    <div class="benefit-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/002.jpg" alt="Fartura e Qualidade">
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Fartura e Qualidade</h3>
+                        <p>Nada de comida fria. Nosso fluxo de serviço garante fatias recém-saídas do forno, com a massa perfeitamente assada e queijo derretido, do início ao fim da festa.</p>
+                    </div>
                 </div>
                 
-                <!-- Benefício 3 -->
+                <!-- Card 3 -->
                 <div class="benefit-card">
-                    <div class="benefit-icon">✨</div>
-                    <h3>Feito aos Olhos do Cliente</h3>
-                    <p>Muito mais que um buffet. A montagem da nossa estrutura e a abertura das massas diante dos convidados criam uma atmosfera envolvente e inesquecível.</p>
+                    <div class="benefit-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/003.jpg" alt="Feito aos Olhos do Cliente">
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Feito aos Olhos do Cliente</h3>
+                        <p>Muito mais que um buffet. A montagem da nossa estrutura e a abertura das massas diante dos convidados criam uma atmosfera envolvente e inesquecível.</p>
+                    </div>
                 </div>
             </div>
         </div>
