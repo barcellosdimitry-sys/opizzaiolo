@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Pizzaiolo - Rodízio de pizza artesanal na sua casa ou evento</title>
+    <title>O Pizzaiolo - Pizza Artesanal no seu Evento</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -16,9 +16,9 @@
             --accent-gold: #e0a353;        
             --bg-dark-warm: #1a0a05;       
             --bg-light: #faf7f2;
-            --text-light: #f2ebe6;         
+            --text-light: #ffffff;         
             --text-dark: #2c2a29;
-            --text-muted: #d1c7bd;
+            --text-muted: #f2ebe6; /* Mais claro para destacar do fundo */
         }
 
         body {
@@ -41,11 +41,10 @@
             background-color: var(--bg-dark-warm);
             color: var(--text-light);
             text-align: center;
-            /* Padding padrão para Desktop */
             padding: 130px 24px 150px 24px;
-            /* Máscara escurecida para melhorar a leitura (45% no centro, 90% nas bordas) */
+            /* Máscara neutra (carvão escuro) para cortar o excesso de vermelho atrás do texto */
             background-image: 
-                radial-gradient(circle, rgba(20, 8, 0, 0.45) 0%, rgba(20, 8, 0, 0.90) 100%), 
+                radial-gradient(circle, rgba(18, 12, 10, 0.65) 0%, rgba(10, 5, 2, 0.92) 100%), 
                 url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg');
             background-size: cover;
             background-position: center;
@@ -60,9 +59,9 @@
         }
 
         header .logo-img {
-            max-width: 240px; 
+            max-width: 250px; /* Levemente maior */
             height: auto;
-            filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.85));
+            filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.95));
             transition: transform 0.3s ease;
         }
 
@@ -70,34 +69,38 @@
             transform: scale(1.03);
         }
 
+        /* Título Principal Mais Robusto e com Sombra Dupla */
         header h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-weight: 600;
+            font-size: 4.5rem; /* Aumentado */
+            font-weight: 700;  /* Mais grosso */
             margin-bottom: 20px;
             line-height: 1.15;
             color: #ffffff;
-            text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.9);
+            /* Sombra dura para recorte + sombra difusa para destaque */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.95), 0px 8px 24px rgba(0, 0, 0, 0.7);
         }
 
+        /* Texto de Apoio Mais Legível */
         header p.hero-text {
-            font-size: 1.2rem;
-            max-width: 740px;
+            font-size: 1.3rem; /* Aumentado */
+            max-width: 780px;
             margin: 0 auto 30px auto;
-            color: var(--text-muted);
-            font-weight: 300;
+            color: var(--text-light); /* Branco puro */
+            font-weight: 400; /* Removido o peso fino (300) */
             line-height: 1.6;
-            text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 1), 0px 4px 12px rgba(0, 0, 0, 0.6);
         }
 
+        /* Informação de Preço Mais Destacada */
         header .hero-info {
-            font-size: 0.95rem;
+            font-size: 1.1rem; /* Aumentado */
             color: var(--accent-gold);
             margin-bottom: 40px;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            font-weight: 600;
-            text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.9);
+            font-weight: 700; /* Deixado em negrito */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
         }
 
         .btn {
@@ -107,65 +110,49 @@
             padding: 18px 48px;
             text-decoration: none;
             border-radius: 4px;
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             transition: all 0.4s ease;
             cursor: pointer;
             border: none;
-            box-shadow: 0 10px 25px rgba(212, 107, 56, 0.35);
+            box-shadow: 0 10px 25px rgba(212, 107, 56, 0.4);
         }
 
         .btn:hover {
             background-color: var(--accent-dark);
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(212, 107, 56, 0.5);
+            box-shadow: 0 15px 30px rgba(212, 107, 56, 0.6);
         }
 
         /* RESPONSIVIDADE (Tablets e Celulares) */
-        
-        /* Tablets (Telas menores que 992px) */
         @media (max-width: 992px) {
-            header h1 {
-                font-size: 3.2rem;
-            }
-            header p.hero-text {
-                font-size: 1.1rem;
-            }
+            header h1 { font-size: 3.6rem; }
+            header p.hero-text { font-size: 1.2rem; }
         }
 
-        /* Celulares (Telas menores que 768px) */
         @media (max-width: 768px) {
             header {
-                padding: 90px 20px 100px 20px;
-                background-attachment: scroll; /* Melhora a performance do fundo em celulares antigos */
+                padding: 100px 20px 110px 20px;
+                background-attachment: scroll; 
             }
-            header .logo-img {
-                max-width: 180px; /* Logo menor no celular */
-            }
-            header h1 {
-                font-size: 2.6rem;
-            }
+            header .logo-img { max-width: 200px; }
+            header h1 { font-size: 2.8rem; }
             header .hero-info {
-                font-size: 0.85rem;
-                line-height: 1.5;
+                font-size: 0.95rem;
+                line-height: 1.6;
             }
         }
 
-        /* Celulares Pequenos (Telas menores que 480px) */
         @media (max-width: 480px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            header p.hero-text {
-                font-size: 1rem;
-            }
+            header h1 { font-size: 2.4rem; }
+            header p.hero-text { font-size: 1.05rem; }
             .btn {
-                width: 100%; /* Botão ocupa 100% da largura para facilitar o clique */
+                width: 100%; 
                 box-sizing: border-box;
                 padding: 16px 20px;
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -183,7 +170,7 @@
             <p class="hero-text">Nossa equipe transforma o seu espaço com aromas, ingredientes frescos e pizzas montadas na hora. Você se dedica a criar memórias com seus convidados, nós cuidamos de toda a gastronomia.</p>
             
             <div class="hero-info">
-                Atendimento em Foz do Iguaçu &bull; A partir de R$60,00 por pessoa (mínimo de 12 convidados)
+                Atendimento em Foz do Iguaçu &bull; A partir de R$ 60,00/pessoa (mínimo de 12 pessoas)
             </div>
             
             <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20consultar%20a%20experiência%20de%20pizzas%20para%20meu%20evento." class="btn" target="_blank">Consultar Disponibilidade</a>
