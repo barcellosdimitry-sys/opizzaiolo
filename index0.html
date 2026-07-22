@@ -202,4 +202,127 @@
     </header>
 
 </body>
+
+    <!-- ESTILOS DA SEÇÃO 2 (Adicione dentro da sua tag <style>) -->
+    <style>
+        /* SEÇÃO 2: BENEFÍCIOS / ALÍVIO DO ANFITRIÃO */
+        .benefits-section {
+            padding: 100px 24px;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: #5a5553;
+            line-height: 1.7;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .benefit-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: #6e6966;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* RESPONSIVIDADE SEÇÃO 2 */
+        @media (max-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .section-header h2 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .benefits-section { padding: 70px 24px; }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .section-header h2 { font-size: 2.2rem; }
+            .section-header p { font-size: 1.05rem; }
+        }
+    </style>
+
+    <!-- HTML DA SEÇÃO 2 (Adicione no <body>, após o <header>) -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Você aproveita a festa.<br>Nós cuidamos da cozinha.</h2>
+                <p>Receber amigos e família deve ser um prazer, não um trabalho exaustivo. Levamos a verdadeira experiência de uma pizzaria artesanal para o seu espaço, garantindo que você seja o convidado de honra do seu próprio evento.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <!-- Benefício 1 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">🥂</div>
+                    <h3>Zero Preocupação</h3>
+                    <p>Esqueça o fogão, a reposição de comida e a pia cheia de louça. Nossa equipe opera todo o serviço para que você possa brindar e conversar sem interrupções.</p>
+                </div>
+                
+                <!-- Benefício 2 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔥</div>
+                    <h3>Pizzas Sempre Quentes</h3>
+                    <p>Nada de comida fria. Nosso fluxo de serviço garante fatias recém-saídas do forno, com a massa perfeitamente assada e queijo derretido, do início ao fim da festa.</p>
+                </div>
+                
+                <!-- Benefício 3 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Um Espetáculo à Parte</h3>
+                    <p>Muito mais que um buffet. A montagem da nossa estrutura e a abertura das massas diante dos convidados criam uma atmosfera envolvente e inesquecível.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </html>
