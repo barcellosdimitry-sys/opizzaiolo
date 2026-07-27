@@ -135,7 +135,7 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
         }
 
-        /* 2. A DOR E O ALÍVIO (O Resultado) */
+        /* 2. A DOR E O ALÍVIO */
         .benefits-section {
             padding: 100px 24px;
             background-color: var(--bg-salmon-transition);
@@ -161,51 +161,39 @@
         }
         .benefit-card p { font-size: 1rem; color: #5e5754; line-height: 1.6; margin: 0; }
 
-        /* 3. A EXPERIÊNCIA COMPLETA (O Produto) */
-        .experience-section {
-            padding: 100px 24px;
-            background-color: var(--bg-light);
-        }
-
-        .experience-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
-            max-width: 1140px; margin: 0 auto; text-align: center;
-        }
-
-        .exp-item h3 {
-            font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
-            color: var(--accent-color); margin-bottom: 10px;
-        }
-        .exp-item p { font-size: 0.95rem; color: #5e5754; line-height: 1.6; }
-
-        /* 4. DESTAQUES DO CARDÁPIO */
-        .menu-section {
+        /* 3 & 4. LISTAS EXPANSÍVEIS (Cardápio e Experiência) */
+        .expandable-section {
             padding: 80px 24px 100px 24px;
-            background-color: var(--bg-light);
         }
 
-        .menu-box {
+        .bg-light { background-color: var(--bg-light); }
+        .bg-transition { background-color: var(--bg-salmon-transition); }
+
+        .content-box {
             background-color: #ffffff; padding: 40px; border-radius: 8px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto;
         }
 
-        .menu-list { list-style: none; padding: 0; margin: 0; }
-        .menu-list li { margin-bottom: 24px; border-bottom: 1px solid #f0ebe4; padding-bottom: 16px; }
-        .menu-list li:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+        .expandable-list { list-style: none; padding: 0; margin: 0; }
+        .expandable-list li { margin-bottom: 24px; border-bottom: 1px solid #f0ebe4; padding-bottom: 16px; }
+        .expandable-list li:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
 
-        .flavor-toggle {
+        .expand-toggle {
             font-size: 1.15rem; color: var(--text-dark); display: flex;
             justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700;
         }
-        .flavor-toggle span {
-            font-size: 0.8rem; font-weight: 500; color: var(--accent-color);
-            background-color: var(--bg-salmon-transition); padding: 3px 10px; border-radius: 4px;
-        }
-        .menu-list p { margin: 8px 0 0 0; color: #666; font-size: 0.95rem; line-height: 1.5; }
         
-        .flavor-image-box { max-height: 0; overflow: hidden; transition: all 0.4s ease; border-radius: 6px; }
-        .flavor-image-box.active { max-height: 250px; margin-top: 15px; }
-        .flavor-image-box img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
+        .expand-toggle span {
+            font-size: 0.8rem; font-weight: 500; color: var(--accent-color);
+            background-color: var(--bg-light); padding: 3px 10px; border-radius: 4px;
+            border: 1px solid #f0ebe4;
+        }
+
+        .expandable-list p { margin: 8px 0 0 0; color: #666; font-size: 0.95rem; line-height: 1.5; }
+        
+        .expand-image-box { max-height: 0; overflow: hidden; transition: all 0.4s ease; border-radius: 6px; }
+        .expand-image-box.active { max-height: 250px; margin-top: 15px; }
+        .expand-image-box img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
 
         /* 5. TRADIÇÃO & QUALIDADE */
         .tradition-section {
@@ -233,7 +221,7 @@
             color: var(--text-muted); line-height: 1.7;
         }
 
-        /* 6. COMO FUNCIONA (3 Passos) */
+        /* 6. COMO FUNCIONA */
         .how-it-works-section {
             padding: 100px 24px;
             background-color: var(--bg-salmon-transition);
@@ -312,13 +300,13 @@
         @media (max-width: 992px) {
             header h1 { font-size: 3.6rem; }
             .section-header h2 { font-size: 2.5rem; }
-            .experience-grid, .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
         }
 
         @media (max-width: 768px) {
             header { padding: 90px 20px 100px 20px; }
             header h1 { font-size: 2.8rem; }
-            .benefits-grid, .experience-grid, .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+            .benefits-grid, .steps-grid { grid-template-columns: 1fr; gap: 24px; }
             .section-header h2, .tradition-section h2, .final-cta-box h2 { font-size: 2.2rem; }
         }
 
@@ -380,75 +368,95 @@
         </div>
     </section>
 
-    <!-- 3. A EXPERIÊNCIA COMPLETA (O PRODUTO) -->
-    <section class="experience-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>A Experiência Completa</h2>
-                <p>O evento começa muito antes da primeira fatia de pizza ser servida.</p>
-            </div>
-
-            <div class="experience-grid">
-                <div class="exp-item">
-                    <h3>Charcutaria & Queijos</h3>
-                    <p>Iniciamos a recepção com uma cuidadosa seleção de antepastos, frios nobres e queijos artesanais para abrir o paladar dos seus convidados com elegância.</p>
-                </div>
-                <div class="exp-item">
-                    <h3>Conservas Exclusivas</h3>
-                    <p>Acompanhamentos que surpreendem. Nossas criações exclusivas, como as requintadas conservas artesanais, elevam o nível de sabor da sua mesa de entradas.</p>
-                </div>
-                <div class="exp-item">
-                    <h3>Longa Fermentação</h3>
-                    <p>A atração principal: massas leves de fermentação natural prolongada, assadas na hora, resultando em bordas perfeitamente alveoladas e fatias irresistíveis.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. DESTAQUES DO CARDÁPIO -->
-    <section class="menu-section">
+    <!-- 3. DESTAQUES DO CARDÁPIO (Invertido) -->
+    <section class="expandable-section bg-light">
         <div class="container">
             <div class="section-header">
                 <h2>Destaques do Cardápio</h2>
                 <p>Nossos sabores mais desejados. Clique para visualizar as montagens.</p>
             </div>
 
-            <div class="menu-box">
-                <ul class="menu-list">
+            <div class="content-box">
+                <ul class="expandable-list">
                     <li>
-                        <div class="flavor-toggle" onclick="toggleFlavor(this)">
+                        <div class="expand-toggle" onclick="toggleImage(this)">
                             Calabresa Especial & Cebola <span>Ver Foto</span>
                         </div>
                         <p>Muçarela, molho rústico, calabresa artesanal e generosas camadas de cebola.</p>
-                        <div class="flavor-image-box">
+                        <div class="expand-image-box">
                             <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/002.jpg" alt="Calabresa Especial">
                         </div>
                     </li>
                     <li>
-                        <div class="flavor-toggle" onclick="toggleFlavor(this)">
+                        <div class="expand-toggle" onclick="toggleImage(this)">
                             Pepperoni Premium <span>Ver Foto</span>
                         </div>
                         <p>Molho equilibrado, muçarela derretida e rodelas selecionadas de salame pepperoni.</p>
-                        <div class="flavor-image-box">
+                        <div class="expand-image-box">
                             <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/004.jpg" alt="Pepperoni Premium">
                         </div>
                     </li>
                     <li>
-                        <div class="flavor-toggle" onclick="toggleFlavor(this)">
+                        <div class="expand-toggle" onclick="toggleImage(this)">
                             Colonial com Goiabada & Bacon <span>Ver Foto</span>
                         </div>
                         <p>União agridoce: queijo branco colonial, cubos de bacon crocante e toque de goiabada.</p>
-                        <div class="flavor-image-box">
+                        <div class="expand-image-box">
                             <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/001.jpg" alt="Colonial e Bacon">
                         </div>
                     </li>
                     <li>
-                        <div class="flavor-toggle" onclick="toggleFlavor(this)">
+                        <div class="expand-toggle" onclick="toggleImage(this)">
                             Chocolate Cremoso com Morangos <span>Ver Foto</span>
                         </div>
                         <p>Creme de leite, coberta com chocolate nobre derretido e frescos morangos fatiados.</p>
-                        <div class="flavor-image-box">
+                        <div class="expand-image-box">
                             <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/003.jpg" alt="Chocolate com Morangos">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. A EXPERIÊNCIA COMPLETA (Invertido e Expansível) -->
+    <section class="expandable-section bg-transition">
+        <div class="container">
+            <div class="section-header">
+                <h2>A Experiência Completa</h2>
+                <p>O evento começa muito antes da primeira fatia de pizza ser servida.</p>
+            </div>
+
+            <div class="content-box">
+                <ul class="expandable-list">
+                    <li>
+                        <div class="expand-toggle" onclick="toggleImage(this)">
+                            Charcutaria & Queijos <span>Ver Foto</span>
+                        </div>
+                        <p>Iniciamos a recepção com uma cuidadosa seleção de antepastos, frios nobres e queijos artesanais para abrir o paladar dos seus convidados com elegância.</p>
+                        <div class="expand-image-box">
+                            <!-- Substitua pelo link correto da imagem de charcutaria no seu repositório -->
+                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg" alt="Mesa de Frios e Charcutaria">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="expand-toggle" onclick="toggleImage(this)">
+                            Conservas Exclusivas <span>Ver Foto</span>
+                        </div>
+                        <p>Acompanhamentos que surpreendem. Nossas criações exclusivas, como as requintadas conservas artesanais, elevam o nível de sabor da sua mesa de entradas.</p>
+                        <div class="expand-image-box">
+                            <!-- Substitua pelo link correto da imagem de conservas (ex: alho negro) no seu repositório -->
+                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/004.jpg" alt="Conservas Artesanais">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="expand-toggle" onclick="toggleImage(this)">
+                            Massas de Longa Fermentação <span>Ver Foto</span>
+                        </div>
+                        <p>A atração principal: massas leves de fermentação natural prolongada, assadas na hora, resultando em bordas perfeitamente alveoladas e fatias irresistíveis.</p>
+                        <div class="expand-image-box">
+                            <!-- Substitua pelo link correto da imagem de massa de pizza crua ou fermentando -->
+                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/002.jpg" alt="Massa de Longa Fermentação">
                         </div>
                     </li>
                 </ul>
@@ -536,9 +544,9 @@
     </section>
 
     <script>
-        function toggleFlavor(element) {
+        function toggleImage(element) {
             const li = element.closest('li');
-            const imgBox = li.querySelector('.flavor-image-box');
+            const imgBox = li.querySelector('.expand-image-box');
             const tagSpan = element.querySelector('span');
             
             imgBox.classList.toggle('active');
