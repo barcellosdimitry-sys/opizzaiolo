@@ -84,6 +84,30 @@
             transition: transform 0.3s ease;
         }
 
+        /* NOVO: Selo Informativo (Preço, Local, Mínimo) */
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            backdrop-filter: blur(4px);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-badge {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+                line-height: 1.4;
+            }
+        }
+
         header h1 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 4.5rem;
@@ -135,7 +159,7 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
         }
 
-        /* 2. A DOR E O ALÍVIO (CORRIGIDO E ALINHADO) */
+        /* 2. A DOR E O ALÍVIO */
         .benefits-section {
             padding: 100px 24px;
             background-color: var(--bg-salmon-transition);
@@ -401,6 +425,12 @@
             <div class="brand-box">
                 <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/logosfun.jpg" alt="O Pizzaiolo" class="logo-img">
             </div>
+            
+            <!-- NOVA INCLUSÃO DA INFORMAÇÃO -->
+            <div class="hero-badge">
+                Foz do Iguaçu &bull; Rodízio a R$60,00/pessoa &bull; Mínimo de 12 convidados
+            </div>
+
             <h1>Rodízio de pizza artesanal<br>na sua casa ou evento</h1>
             <p class="hero-text">Transforme o seu espaço com aromas, ingredientes frescos e pizzas montadas na hora. Você se dedica a criar memórias com seus convidados, nós cuidamos de toda a gastronomia.</p>
             
@@ -413,7 +443,7 @@
         </div>
     </header>
 
-    <!-- 2. A DOR E O ALÍVIO (O RESULTADO - CORRIGIDO) -->
+    <!-- 2. A DOR E O ALÍVIO -->
     <section class="benefits-section">
         <div class="container">
             <div class="section-header">
@@ -422,7 +452,6 @@
             </div>
                         
             <div class="benefits-layout-grid">
-                <!-- Coluna da Esquerda: Cards Empilhados -->
                 <div class="benefits-stack">
                     <div class="benefit-card">
                         <div class="benefit-img-wrapper">
@@ -445,7 +474,6 @@
                     </div>
                 </div>
 
-                <!-- Coluna da Direita: Imagem de Destaque -->
                 <div class="benefits-featured-img">
                     <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/001.jpg" alt="Espetáculo de Pizza Artesanal">
                 </div>
