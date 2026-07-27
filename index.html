@@ -78,9 +78,10 @@
             display: flex; justify-content: center; align-items: center;
         }
 
+        /* LOGO MAIS VIVA E ACESA COM FILTROS */
         header .logo-img {
             max-width: 250px; height: auto;
-            filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.95));
+            filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.95)) saturate(1.4) brightness(1.15) contrast(1.15);
             transition: transform 0.3s ease;
         }
 
@@ -161,27 +162,35 @@
         }
         .benefit-card p { font-size: 1rem; color: #5e5754; line-height: 1.6; margin: 0; }
 
-        /* 3. CARDÁPIO COM FUNDO DE IMAGEM */
+        /* 3. CARDÁPIO COM FUNDO DE IMAGEM CLAREADO EM 50% */
         .menu-section-bg {
             padding: 100px 24px;
             background-image: 
-                linear-gradient(rgba(26, 10, 5, 0.85), rgba(15, 6, 3, 0.92)),
-                url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/001.jpg'); /* Imagem de fundo do cardápio */
+                linear-gradient(rgba(26, 10, 5, 0.42), rgba(15, 6, 3, 0.46)), /* Opacidade reduzida pela metade */
+                url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/001.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Efeito Parallax */
+            background-attachment: fixed;
         }
         
-        .menu-section-bg .section-header h2 { color: #ffffff; }
-        .menu-section-bg .section-header p { color: var(--text-muted); }
+        /* Sombras no texto adicionadas para garantir a leitura no fundo mais claro */
+        .menu-section-bg .section-header h2 { 
+            color: #ffffff; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+        .menu-section-bg .section-header p { 
+            color: var(--text-light); 
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.9);
+            font-weight: 500;
+        }
 
-        /* LISTAS EXPANSÍVEIS (Base compartilhada) */
+        /* LISTAS EXPANSÍVEIS */
         .expandable-section { padding: 80px 24px 100px 24px; }
         .bg-transition { background-color: var(--bg-salmon-transition); }
 
         .content-box {
             background-color: #ffffff; padding: 40px; border-radius: 8px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Sombra mais forte para destacar a caixa do fundo */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
             max-width: 800px; margin: 0 auto;
         }
 
@@ -379,7 +388,7 @@
         </div>
     </section>
 
-    <!-- 3. DESTAQUES DO CARDÁPIO (Com Fundo de Imagem Parallax) -->
+    <!-- 3. DESTAQUES DO CARDÁPIO (Fundo Claro) -->
     <section class="menu-section-bg">
         <div class="container">
             <div class="section-header">
