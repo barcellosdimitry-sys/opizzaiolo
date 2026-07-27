@@ -162,18 +162,17 @@
         }
         .benefit-card p { font-size: 1rem; color: #5e5754; line-height: 1.6; margin: 0; }
 
-        /* 3. CARDÁPIO COM FUNDO DE IMAGEM CLAREADO EM 50% */
+        /* 3. CARDÁPIO COM FUNDO DE IMAGEM */
         .menu-section-bg {
             padding: 100px 24px;
             background-image: 
-                linear-gradient(rgba(26, 10, 5, 0.42), rgba(15, 6, 3, 0.46)), /* Opacidade reduzida pela metade */
+                linear-gradient(rgba(26, 10, 5, 0.42), rgba(15, 6, 3, 0.46)),
                 url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/001.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
         
-        /* Sombras no texto adicionadas para garantir a leitura no fundo mais claro */
         .menu-section-bg .section-header h2 { 
             color: #ffffff; 
             text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
@@ -215,13 +214,15 @@
         .expand-image-box.active { max-height: 250px; margin-top: 15px; }
         .expand-image-box img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
 
-        /* 5. TRADIÇÃO & QUALIDADE */
+        /* 5. TRADIÇÃO & QUALIDADE - FUNDO 50% MAIS CLARO */
         .tradition-section {
             background-color: var(--bg-dark-warm);
             color: var(--text-light);
             text-align: center;
             padding: 100px 24px;
-            background-image: radial-gradient(circle, rgba(26, 10, 5, 0.88) 0%, rgba(15, 6, 3, 0.96) 100%), url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg');
+            background-image: 
+                radial-gradient(circle, rgba(26, 10, 5, 0.44) 0%, rgba(15, 6, 3, 0.48) 100%), 
+                url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -230,18 +231,22 @@
             display: inline-block; color: var(--accent-gold); font-size: 0.9rem;
             letter-spacing: 2.5px; text-transform: uppercase; font-weight: 700;
             margin-bottom: 20px; border-bottom: 1px solid var(--accent-gold); padding-bottom: 5px;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
         }
 
         .tradition-section h2 {
             font-family: 'Cormorant Garamond', serif; font-size: 3rem;
             color: #ffffff; margin: 0 0 24px 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
         }
         .tradition-section p {
             font-size: 1.15rem; max-width: 760px; margin: 0 auto;
-            color: var(--text-muted); line-height: 1.7;
+            color: #ffffff; line-height: 1.7;
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.9);
+            font-weight: 500;
         }
 
-        /* 6. COMO FUNCIONA */
+        /* 6. COMO FUNCIONA - COM FAIXAS DE IMAGEM NO LUGAR DE NÚMEROS */
         .how-it-works-section {
             padding: 100px 24px;
             background-color: var(--bg-salmon-transition);
@@ -254,20 +259,26 @@
         }
 
         .step-card {
-            background-color: #ffffff; padding: 40px 30px; border-radius: 8px;
+            background-color: #ffffff; padding: 24px 24px 40px 24px; border-radius: 8px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-            display: flex; flex-direction: column; align-items: center;
+            display: flex; flex-direction: column; align-items: center; text-align: center;
         }
 
-        .step-number {
-            width: 60px; height: 60px; background-color: var(--accent-color);
-            color: #ffffff; font-family: 'Cormorant Garamond', serif; font-size: 2rem;
-            font-weight: 700; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; margin-bottom: 20px;
+        .step-image-strip {
+            width: 100%; height: 140px; border-radius: 6px;
+            overflow: hidden; margin-bottom: 20px;
+        }
+        
+        .step-image-strip img {
+            width: 100%; height: 100%; object-fit: cover;
         }
 
         .step-card h3 {
             font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin: 0 0 12px 0;
+        }
+        
+        .step-card p {
+            font-size: 1rem; color: #5e5754; line-height: 1.6; margin: 0;
         }
 
         /* 7. FAQ & CTA FINAL */
@@ -388,7 +399,7 @@
         </div>
     </section>
 
-    <!-- 3. DESTAQUES DO CARDÁPIO (Fundo Claro) -->
+    <!-- 3. DESTAQUES DO CARDÁPIO -->
     <section class="menu-section-bg">
         <div class="container">
             <div class="section-header">
@@ -439,7 +450,7 @@
         </div>
     </section>
 
-    <!-- 4. A EXPERIÊNCIA COMPLETA (Expansível) -->
+    <!-- 4. A EXPERIÊNCIA COMPLETA -->
     <section class="expandable-section bg-transition">
         <div class="container">
             <div class="section-header">
@@ -481,7 +492,7 @@
         </div>
     </section>
 
-    <!-- 5. TRADIÇÃO & QUALIDADE (Confiança) -->
+    <!-- 5. TRADIÇÃO & QUALIDADE -->
     <section class="tradition-section">
         <div class="container">
             <span class="heritage-badge">Herança & Técnica</span>
@@ -492,7 +503,7 @@
         </div>
     </section>
 
-    <!-- 6. COMO FUNCIONA (3 Passos) -->
+    <!-- 6. COMO FUNCIONA (Com imagens em vez de números) -->
     <section class="how-it-works-section">
         <div class="container">
             <div class="section-header">
@@ -502,17 +513,24 @@
 
             <div class="steps-grid">
                 <div class="step-card">
-                    <div class="step-number">1</div>
+                    <div class="step-image-strip">
+                        <!-- Usei imagens do seu repo que combinam com os passos. Você pode alterar depois caso tenha imagens mais específicas para o processo -->
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/004.jpg" alt="O Contato">
+                    </div>
                     <h3>O Contato</h3>
                     <p>Você envia a data e o número de convidados pelo WhatsApp. Nós retornamos com orçamentos e sugestões para o seu evento.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-number">2</div>
+                    <div class="step-image-strip">
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/002.jpg" alt="O Planejamento">
+                    </div>
                     <h3>O Planejamento</h3>
                     <p>Personalizamos o cardápio e preparamos tudo nos bastidores, garantindo o longo tempo de maturação da sua massa.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-number">3</div>
+                    <div class="step-image-strip">
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/001.jpg" alt="O Evento">
+                    </div>
                     <h3>O Evento</h3>
                     <p>Chegamos com antecedência, montamos nossa estrutura independente e servimos pizzas perfeitas sem parar. Depois, limpamos tudo.</p>
                 </div>
