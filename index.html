@@ -49,7 +49,7 @@
                 url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: scroll; /* Ajustado: rola suavemente sem criar confusão visual */
+            background-attachment: scroll;
         }
 
         header .brand-box {
@@ -344,7 +344,7 @@
             font-weight: 600;
         }
 
-        /* SEÇÃO 4: COMO FUNCIONA (Sintonizada com a paleta salmão/terracotta) */
+        /* SEÇÃO 4: COMO FUNCIONA */
         .how-it-works-section {
             padding: 100px 24px;
             background-color: var(--bg-salmon-transition);
@@ -406,43 +406,142 @@
             margin: 0;
         }
 
+        /* BLOCO INTEGRADO: DEPOIMENTOS + TRADIÇÃO FAMILIAR + FECHAMENTO */
+        .closing-block {
+            background-color: var(--bg-light);
+            padding-top: 100px;
+        }
+
+        /* Sub-seção Depoimentos */
+        .testimonials-wrapper {
+            margin-bottom: 90px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: #ffffff;
+            padding: 32px 28px;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .stars {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-quote {
+            font-size: 0.98rem;
+            color: #433b37;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author span {
+            display: block;
+            font-weight: 400;
+            color: #7a726d;
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        /* Sub-seção Fechamento & Tradição Familiar (Fundo Escuro Aconchegante) */
+        .final-hero {
+            background-color: var(--bg-dark-warm);
+            color: var(--text-light);
+            text-align: center;
+            padding: 100px 24px 80px 24px;
+            background-image: 
+                radial-gradient(circle, rgba(26, 10, 5, 0.88) 0%, rgba(15, 6, 3, 0.96) 100%), 
+                url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg');
+            background-size: cover;
+            background-position: center;
+            border-top: 1px solid rgba(224, 163, 83, 0.2);
+        }
+
+        .heritage-badge {
+            display: inline-block;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--accent-gold);
+            padding-bottom: 5px;
+        }
+
+        .final-hero h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .final-hero p.heritage-text {
+            font-size: 1.15rem;
+            max-width: 760px;
+            margin: 0 auto 40px auto;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .footer-bottom {
+            margin-top: 70px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: #9e9188;
+        }
+
         /* RESPONSIVIDADE */
         @media (max-width: 992px) {
             header h1 { font-size: 3.6rem; }
             header p.hero-text { font-size: 1.15rem; }
             .benefits-grid { grid-template-columns: repeat(2, 1fr); }
             .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-            .section-header h2 { font-size: 2.5rem; }
+            .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
+            .section-header h2, .final-hero h2 { font-size: 2.5rem; }
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 90px 20px 100px 20px;
-            }
+            header { padding: 90px 20px 100px 20px; }
             header .logo-img { max-width: 200px; }
             header h1 { font-size: 2.8rem; }
-            header .hero-info {
-                font-size: 0.95rem;
-                line-height: 1.6;
-            }
-            .benefits-section, .menu-section, .how-it-works-section { padding: 70px 24px; }
-            .benefits-grid, .menu-grid, .steps-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            .section-header h2 { font-size: 2.2rem; }
-            .section-header p { font-size: 1.05rem; }
+            header .hero-info { font-size: 0.95rem; line-height: 1.6; }
+            .benefits-section, .menu-section, .how-it-works-section, .closing-block { padding-top: 70px; }
+            .benefits-grid, .menu-grid, .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+            .section-header h2, .final-hero h2 { font-size: 2.2rem; }
+            .section-header p, .final-hero p.heritage-text { font-size: 1.05rem; }
+            .final-hero { padding: 70px 20px 50px 20px; }
         }
 
         @media (max-width: 480px) {
             header h1 { font-size: 2.3rem; }
             header p.hero-text { font-size: 1.05rem; }
-            .btn {
-                width: 100%; 
-                box-sizing: border-box;
-                padding: 18px 20px;
-                font-size: 1rem;
-            }
+            .btn { width: 100%; box-sizing: border-box; padding: 18px 20px; font-size: 1rem; }
             .cta-note { font-size: 0.85rem; }
         }
     </style>
@@ -585,7 +684,7 @@
         </div>
     </section>
 
-    <!-- BLOCO 4: COMO FUNCIONA (NOVO) -->
+    <!-- BLOCO 4: COMO FUNCIONA -->
     <section class="how-it-works-section">
         <div class="container">
             <div class="section-header">
@@ -616,6 +715,78 @@
                     <div class="step-number">4</div>
                     <h3>Festa Inesquecível</h3>
                     <p>Pizzas assadas continuamente diante dos convidados e servidas bem quentinhas. Ao final, deixamos tudo limpo e organizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCO 5 INTEGRADO: DEPOIMENTOS + TRADIÇÃO FAMILIAR + FECHAMENTO FINAL -->
+    <section class="closing-block">
+        <!-- Sub-bloco A: Depoimentos (Prova Social) -->
+        <div class="testimonials-wrapper">
+            <div class="container">
+                <div class="section-header">
+                    <h2>O que dizem nossos clientes</h2>
+                    <p>A satisfação de quem já confiou o seu evento às nossas mãos.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-quote">"Contratamos para o aniversário de 40 anos do meu marido. As pizzas saíram quentinhas e sem parar. A massa é incrivelmente leve, ninguém ficou 'estufado'!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            Mariana R.
+                            <span>Foz do Iguaçu — Festa de Aniversário</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-quote">"Atendimento impecável! Não precisei me preocupar com absolutamente nada na cozinha. A pizza de queijo colonial com goiabada e bacon foi o assunto da noite."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            Carlos Henrique S.
+                            <span>Foz do Iguaçu — Reunião de Família</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-quote">"Pontuais, organizados e extremamente caprichosos. Limparam tudo antes de ir embora. Recomendo de olhos fechados para qualquer evento!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            Fernanda M.
+                            <span>Foz do Iguaçu — Confraternização</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sub-bloco C: Tradição Familiar & Chamada Final para WhatsApp -->
+        <div class="final-hero">
+            <div class="container">
+                <span class="heritage-badge">Tradição & Amor à Gastronomia</span>
+                
+                <h2>Paixão pela pizza que atravessa gerações</h2>
+                
+                <p class="heritage-text">
+                    Nossa história com a pizza começou na pizzaria da família em 1990. Carregamos décadas de respeito à massa artesanal, ao tempo certo de forno e à arte de bem receber. Leve essa tradição e carinho diretamente para o seu evento.
+                </p>
+
+                <div class="cta-wrapper">
+                    <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20garantir%20minha%20data%20e%20solicitar%20uma%20proposta." class="btn" target="_blank">
+                        Garantir Data no Meu Evento
+                    </a>
+                    <span class="cta-note">Datas limitadas por final de semana. Fale conosco agora!</span>
+                </div>
+
+                <div class="footer-bottom">
+                    &copy; 2026 O Pizzaiolo. Todos os direitos reservados. &bull; Atendimento exclusivo em Foz do Iguaçu e região.
                 </div>
             </div>
         </div>
