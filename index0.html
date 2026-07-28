@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Pizzaiolo - Pizza Artesanal no seu Evento</title>
 
-    <!-- Fonte Única - Elegante e Moderna (Alta Gastronomia) -->
+    <!-- Fonte Única - Elegante e Moderna -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --accent-primary: #d45d2d; /* Laranja queimado / Forno */
-            --accent-gold: #c69b65;    /* Dourado sofisticado */
-            --text-main: #f2ebe3;      /* Off-white quente para leitura */
-            --text-muted: #b8b1a8;     /* Texto secundário */
-            --bg-deep: #14110f;        /* Fundo super escuro e quente */
+            --accent-primary: #c25e38; /* Terracotta / Forno a Lenha */
+            --accent-gold: #a07855;    /* Bronze / Madeira Nobre */
+            --text-main: #2a2421;      /* Marrom Espresso Quente (substitui o preto pesado) */
+            --text-muted: #6e655f;     /* Texto secundário legível e suave */
+            --bg-light: #f7f4ef;       /* Creme suave / Linho (Fundo contínuo limpo e claro) */
+            --card-bg: #ffffff;        /* Branco puro para os painéis */
         }
 
         /* 1. FONTE ÚNICA */
@@ -25,13 +26,12 @@
             font-family: 'Montserrat', sans-serif !important;
         }
 
-        /* 2. FUNDO ÚNICO E CONTÍNUO */
+        /* 2. FUNDO ÚNICO E CLARO */
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-deep);
-            /* Gradiente radial muito sutil para aquecer o centro da tela */
-            background-image: radial-gradient(circle at top center, #241d18 0%, var(--bg-deep) 100%);
+            background-color: var(--bg-light);
+            background-image: radial-gradient(circle at top center, #ffffff 0%, var(--bg-light) 100%);
             color: var(--text-main);
             -webkit-font-smoothing: antialiased;
             font-size: 16px;
@@ -44,21 +44,20 @@
             padding: 0 20px;
         }
 
-        /* 3. BASES COM TEXTURA E SOMBREAMENTO PARA OS TEXTOS */
+        /* 3. BASES COM TEXTURA E SOMBREAMENTO (PAINÉIS CLAROS) */
         .premium-panel {
-            background: linear-gradient(145deg, rgba(40, 32, 26, 0.85), rgba(20, 16, 14, 0.95));
-            border: 1px solid rgba(198, 155, 101, 0.15); /* Borda sutil dourada */
+            background: var(--card-bg);
+            border: 1px solid rgba(160, 120, 85, 0.15); /* Borda suave bronze */
             border-radius: 16px;
             padding: 45px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 2px 10px rgba(255,255,255,0.03);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(42, 36, 33, 0.06), 0 5px 15px rgba(0,0,0,0.02);
             margin-bottom: 30px;
         }
 
         h1, h2, h3 {
             font-weight: 700;
             margin-top: 0;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+            color: var(--text-main);
         }
 
         .section-header {
@@ -69,7 +68,6 @@
 
         .section-header h2 {
             font-size: 2.8rem;
-            color: var(--text-main);
             margin-bottom: 15px;
             letter-spacing: -0.5px;
         }
@@ -86,9 +84,9 @@
         .framed-img {
             width: 100%;
             height: auto;
-            border: 2px solid rgba(198, 155, 101, 0.3); /* Dourado suave */
+            border: 2px solid rgba(160, 120, 85, 0.25);
             border-radius: 10px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+            box-shadow: 0 10px 25px rgba(42, 36, 33, 0.1);
             object-fit: cover;
         }
 
@@ -104,15 +102,14 @@
             font-weight: 600;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(212, 93, 45, 0.35);
+            box-shadow: 0 8px 25px rgba(194, 94, 56, 0.3);
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 93, 45, 0.5);
-            background-color: #e56835;
+            box-shadow: 0 12px 30px rgba(194, 94, 56, 0.45);
+            background-color: #b04e28;
         }
 
         /* ABERTURA (HERO) */
@@ -124,12 +121,12 @@
         header .logo-img {
             max-width: 220px;
             margin-bottom: 35px;
-            filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.9));
+            filter: drop-shadow(0px 8px 16px rgba(42, 36, 33, 0.15));
         }
 
         .hero-badge {
             display: inline-block;
-            background-color: rgba(198, 155, 101, 0.1);
+            background-color: rgba(160, 120, 85, 0.1);
             border: 1px solid var(--accent-gold);
             padding: 8px 25px;
             border-radius: 50px;
@@ -145,7 +142,7 @@
             font-size: 3.8rem;
             line-height: 1.1;
             margin-bottom: 25px;
-            color: #ffffff;
+            color: var(--text-main);
         }
 
         header p.hero-text {
@@ -187,7 +184,7 @@
         .expandable-list { list-style: none; padding: 0; margin: 0; }
         
         .expandable-list li {
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(42, 36, 33, 0.08);
             padding: 25px 0;
         }
         
@@ -197,7 +194,7 @@
         .expand-toggle {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #ffffff;
+            color: var(--text-main);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -206,9 +203,9 @@
         
         .expand-toggle span {
             font-size: 0.85rem;
-            font-weight: 400;
-            color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
+            font-weight: 600;
+            color: var(--accent-primary);
+            border: 1px solid var(--accent-primary);
             padding: 6px 14px;
             border-radius: 50px;
             text-transform: uppercase;
@@ -217,7 +214,7 @@
         }
 
         .expand-toggle:hover span {
-            background-color: rgba(198, 155, 101, 0.1);
+            background-color: rgba(194, 94, 56, 0.08);
         }
 
         .expandable-list p {
@@ -245,8 +242,8 @@
         .step-item img {
             height: 160px;
             margin-bottom: 25px;
-            border-radius: 50%; /* Um toque charmoso para os passos */
-            border: 3px solid rgba(198, 155, 101, 0.2);
+            border-radius: 50%;
+            border: 3px solid rgba(160, 120, 85, 0.25);
             object-fit: cover;
             width: 160px;
         }
@@ -266,23 +263,24 @@
         .faq-container {
             display: flex;
             flex-direction: column;
-            gap: 15px; /* Evita quebra de margens em celulares antigos */
+            gap: 15px;
             max-width: 800px;
             margin: 0 auto;
         }
 
         details {
-            background: linear-gradient(145deg, rgba(40, 32, 26, 0.6), rgba(20, 16, 14, 0.8));
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--card-bg);
+            border: 1px solid rgba(160, 120, 85, 0.15);
             border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 4px 12px rgba(42, 36, 33, 0.04);
         }
 
         summary {
             padding: 22px 25px;
             font-size: 1.15rem;
             font-weight: 600;
-            color: #ffffff;
+            color: var(--text-main);
             cursor: pointer;
             list-style: none;
             display: flex;
@@ -291,7 +289,7 @@
         }
         
         summary::-webkit-details-marker { display: none; }
-        summary::after { content: '+'; color: var(--accent-gold); font-size: 1.5rem; font-weight: 300; }
+        summary::after { content: '+'; color: var(--accent-primary); font-size: 1.5rem; font-weight: 400; }
         details[open] summary::after { content: '−'; }
         
         .faq-answer {
@@ -302,7 +300,7 @@
         }
 
         .cta-note {
-            display: block; font-size: 0.95rem; color: rgba(255,255,255,0.4);
+            display: block; font-size: 0.95rem; color: var(--text-muted);
             margin-top: 15px;
             font-weight: 300;
         }
@@ -377,7 +375,7 @@
         </div>
     </section>
 
-    <!-- DESTAQUES DO CARDÁPIO (Fixo, rola junto com a página) -->
+    <!-- DESTAQUES DO CARDÁPIO -->
     <section>
         <div class="container">
             <div class="section-header">
@@ -473,8 +471,8 @@
     <!-- TRADIÇÃO -->
     <section>
         <div class="container">
-            <div class="premium-panel" style="text-align: center; border-color: rgba(198, 155, 101, 0.4);">
-                <span class="hero-badge" style="margin-top: -65px; background: var(--bg-deep); opacity: 1; position: relative; z-index: 10;">Herança & Técnica</span>
+            <div class="premium-panel" style="text-align: center; border-color: rgba(160, 120, 85, 0.3);">
+                <span class="hero-badge" style="margin-top: -65px; background: var(--bg-light); opacity: 1; position: relative; z-index: 10;">Herança & Técnica</span>
                 <h2 style="margin-top: 10px;">Nossa História Desde 1990</h2>
                 <p style="font-size: 1.15rem; max-width: 800px; margin: 0 auto; color: var(--text-muted); font-weight: 300;">
                     Muito antes de levarmos os fornos para o seu evento, nossa paixão nasceu na pizzaria da família. Hoje, honramos essa herança afetiva unindo a tradição que atravessa gerações à excelência técnica napolitana: hidratação absoluta da massa, respeito ao tempo e ingredientes de primeiríssima linha.
@@ -545,7 +543,7 @@
                 </a>
             </div>
 
-            <div style="text-align: center; margin-top: 50px; color: rgba(255,255,255,0.2); font-size: 0.9rem;">
+            <div style="text-align: center; margin-top: 50px; color: var(--text-muted); font-size: 0.9rem;">
                 &copy; 2026 O Pizzaiolo. Todos os direitos reservados. &bull; Foz do Iguaçu, PR.
             </div>
         </div>
