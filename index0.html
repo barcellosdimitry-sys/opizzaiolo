@@ -5,37 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Pizzaiolo - Pizza Artesanal no seu Evento</title>
 
-    <!-- Fonte Única - Elegante e Moderna -->
+    <!-- Fonte Única - Elegante, Forte e com Alto Destaque -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --accent-primary: #c25e38; /* Terracotta / Forno a Lenha */
-            --accent-gold: #a07855;    /* Bronze / Madeira Nobre */
-            --text-main: #2a2421;      /* Marrom Espresso Quente (substitui o preto pesado) */
-            --text-muted: #6e655f;     /* Texto secundário legível e suave */
-            --bg-light: #f7f4ef;       /* Creme suave / Linho (Fundo contínuo limpo e claro) */
-            --card-bg: #ffffff;        /* Branco puro para os painéis */
+            --bg-red: #9c271e;                 /* Vermelho Gourmet Quente e Profundo */
+            --bg-red-gradient: radial-gradient(circle at top center, #b83325 0%, #821c14 100%);
+            --panel-yellow: #f4d87a;           /* Amarelo Quente / Manteiga nobre para os quadros */
+            --panel-yellow-border: #c99e32;    /* Borda dourada/amarela escura */
+            --text-dark: #1f1a14;              /* Texto escuro de alto contraste para dentro dos quadros */
+            --text-muted: #4a3d31;             /* Texto secundário escuro legível */
+            --text-light: #ffffff;             /* Texto branco para fora dos quadros */
+            --accent-btn: #1a1612;             /* Botão de alto contraste elegante */
         }
 
-        /* 1. FONTE ÚNICA */
+        /* 1. FONTE ÚNICA COM DESTAQUE */
         * {
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif !important;
         }
 
-        /* 2. FUNDO ÚNICO E CLARO */
+        /* 2. FUNDO ÚNICO VERMELHO DO INÍCIO AO FIM */
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-light);
-            background-image: radial-gradient(circle at top center, #ffffff 0%, var(--bg-light) 100%);
-            color: var(--text-main);
+            background-color: var(--bg-red);
+            background-image: var(--bg-red-gradient);
+            color: var(--text-light);
             -webkit-font-smoothing: antialiased;
-            font-size: 16px;
-            line-height: 1.7;
+            font-size: 17px;
+            line-height: 1.6;
         }
 
         .container {
@@ -44,20 +46,32 @@
             padding: 0 20px;
         }
 
-        /* 3. BASES COM TEXTURA E SOMBREAMENTO (PAINÉIS CLAROS) */
+        /* 3. QUADROS EM AMARELO COM TEXTURA, ALTO DESTAQUE E MAIS SOMBRAS */
         .premium-panel {
-            background: var(--card-bg);
-            border: 1px solid rgba(160, 120, 85, 0.15); /* Borda suave bronze */
+            background-color: var(--panel-yellow);
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.05) 100%);
+            border: 3px solid var(--panel-yellow-border);
             border-radius: 16px;
             padding: 45px;
-            box-shadow: 0 15px 35px rgba(42, 36, 33, 0.06), 0 5px 15px rgba(0,0,0,0.02);
-            margin-bottom: 30px;
+            /* Sombras bem marcadas para destacar os quadros sobre o vermelho */
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45), 0 10px 20px rgba(0, 0, 0, 0.25);
+            margin-bottom: 35px;
+            color: var(--text-dark);
+        }
+
+        /* Textos dentro dos quadros amarelos */
+        .premium-panel h2, 
+        .premium-panel h3, 
+        .premium-panel p, 
+        .premium-panel span {
+            color: var(--text-dark);
         }
 
         h1, h2, h3 {
-            font-weight: 700;
+            font-weight: 900;
             margin-top: 0;
-            color: var(--text-main);
+            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .section-header {
@@ -67,49 +81,53 @@
         }
 
         .section-header h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
+            color: var(--text-light);
             margin-bottom: 15px;
-            letter-spacing: -0.5px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
         }
 
         .section-header p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
+            font-size: 1.3rem;
+            color: #fceade;
             max-width: 800px;
             margin: 0 auto;
-            font-weight: 300;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         }
 
-        /* 4. ENQUADRAMENTO DAS IMAGENS */
+        /* 4. ENQUADRAMENTO DAS IMAGENS COM BORDAS MARCANTES */
         .framed-img {
             width: 100%;
             height: auto;
-            border: 2px solid rgba(160, 120, 85, 0.25);
+            border: 4px solid #ffffff;
             border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(42, 36, 33, 0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
             object-fit: cover;
         }
 
-        /* BOTÕES */
+        /* BOTÕES DE ALTO IMPACTO */
         .btn {
             display: inline-block;
-            background-color: var(--accent-primary);
-            color: white;
-            padding: 16px 45px;
+            background-color: var(--accent-btn);
+            color: var(--panel-yellow);
+            padding: 18px 45px;
             text-decoration: none;
             border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 800;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(194, 94, 56, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
             text-align: center;
+            border: 2px solid var(--panel-yellow);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(194, 94, 56, 0.45);
-            background-color: #b04e28;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            background-color: #000000;
+            color: #ffffff;
         }
 
         /* ABERTURA (HERO) */
@@ -119,38 +137,41 @@
         }
 
         header .logo-img {
-            max-width: 220px;
+            max-width: 240px;
             margin-bottom: 35px;
-            filter: drop-shadow(0px 8px 16px rgba(42, 36, 33, 0.15));
+            filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.6));
         }
 
         .hero-badge {
             display: inline-block;
-            background-color: rgba(160, 120, 85, 0.1);
-            border: 1px solid var(--accent-gold);
-            padding: 8px 25px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--panel-yellow);
+            padding: 10px 25px;
             border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--accent-gold);
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--panel-yellow);
             margin-bottom: 30px;
             letter-spacing: 1px;
             text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         header h1 {
-            font-size: 3.8rem;
+            font-size: 4rem;
             line-height: 1.1;
             margin-bottom: 25px;
-            color: var(--text-main);
+            color: var(--text-light);
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
         }
 
         header p.hero-text {
-            font-size: 1.3rem;
-            font-weight: 300;
+            font-size: 1.4rem;
+            font-weight: 600;
             max-width: 800px;
             margin: 0 auto 40px auto;
-            color: var(--text-muted);
+            color: #fceade;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
 
         .hero-image-container {
@@ -169,22 +190,23 @@
         }
 
         .benefit-content h3 {
-            font-size: 1.8rem;
-            color: var(--accent-gold);
+            font-size: 2rem;
+            color: #821c14;
             margin-bottom: 15px;
+            font-weight: 900;
         }
 
         .benefit-content p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            font-weight: 300;
+            font-weight: 600;
         }
 
         /* LISTAS EXPANSÍVEIS (CARDÁPIO E EXPERIÊNCIA) - Fixo sem Parallax */
         .expandable-list { list-style: none; padding: 0; margin: 0; }
         
         .expandable-list li {
-            border-bottom: 1px solid rgba(42, 36, 33, 0.08);
+            border-bottom: 2px solid rgba(31, 26, 20, 0.15);
             padding: 25px 0;
         }
         
@@ -192,9 +214,9 @@
         .expandable-list li:first-child { padding-top: 0; }
 
         .expand-toggle {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-main);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-dark);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -202,26 +224,29 @@
         }
         
         .expand-toggle span {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--accent-primary);
-            border: 1px solid var(--accent-primary);
-            padding: 6px 14px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #ffffff;
+            background-color: #821c14;
+            border: 2px solid #821c14;
+            padding: 6px 16px;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .expand-toggle:hover span {
-            background-color: rgba(194, 94, 56, 0.08);
+            background-color: #1a1612;
+            border-color: #1a1612;
         }
 
         .expandable-list p {
             margin: 15px 0 0 0;
             color: var(--text-muted);
-            font-size: 1.05rem;
-            font-weight: 300;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
         
         .expand-image-box {
@@ -243,20 +268,22 @@
             height: 160px;
             margin-bottom: 25px;
             border-radius: 50%;
-            border: 3px solid rgba(160, 120, 85, 0.25);
+            border: 4px solid var(--panel-yellow-border);
             object-fit: cover;
             width: 160px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         .step-item h3 {
-            font-size: 1.5rem;
-            color: var(--accent-gold);
+            font-size: 1.6rem;
+            color: #821c14;
+            font-weight: 900;
         }
 
         .step-item p {
-            font-weight: 300;
+            font-weight: 600;
             color: var(--text-muted);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
         }
 
         /* 5. FAQ - CORREÇÃO DE ESTRUTURA PARA CELULAR */
@@ -269,18 +296,19 @@
         }
 
         details {
-            background: var(--card-bg);
-            border: 1px solid rgba(160, 120, 85, 0.15);
-            border-radius: 10px;
+            background-color: var(--panel-yellow);
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.05) 100%);
+            border: 3px solid var(--panel-yellow-border);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(42, 36, 33, 0.04);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         summary {
             padding: 22px 25px;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text-main);
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
             cursor: pointer;
             list-style: none;
             display: flex;
@@ -289,20 +317,21 @@
         }
         
         summary::-webkit-details-marker { display: none; }
-        summary::after { content: '+'; color: var(--accent-primary); font-size: 1.5rem; font-weight: 400; }
+        summary::after { content: '+'; color: #821c14; font-size: 2rem; font-weight: 900; }
         details[open] summary::after { content: '−'; }
         
         .faq-answer {
             padding: 0 25px 25px 25px;
-            font-size: 1.05rem;
-            font-weight: 300;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: var(--text-muted);
         }
 
         .cta-note {
-            display: block; font-size: 0.95rem; color: var(--text-muted);
+            display: block; font-size: 1rem; color: #fceade;
             margin-top: 15px;
-            font-weight: 300;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         /* RESPONSIVIDADE */
@@ -312,12 +341,12 @@
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .section-header h2 { font-size: 2.2rem; }
-            .hero-badge { font-size: 0.8rem; padding: 6px 16px; }
+            header h1 { font-size: 2.8rem; }
+            .section-header h2 { font-size: 2.4rem; }
+            .hero-badge { font-size: 0.9rem; padding: 8px 18px; }
             .premium-panel { padding: 30px 20px; }
-            .expand-toggle { font-size: 1.1rem; }
-            .expand-toggle span { padding: 4px 10px; font-size: 0.75rem; }
+            .expand-toggle { font-size: 1.2rem; }
+            .expand-toggle span { padding: 5px 12px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -471,10 +500,10 @@
     <!-- TRADIÇÃO -->
     <section>
         <div class="container">
-            <div class="premium-panel" style="text-align: center; border-color: rgba(160, 120, 85, 0.3);">
-                <span class="hero-badge" style="margin-top: -65px; background: var(--bg-light); opacity: 1; position: relative; z-index: 10;">Herança & Técnica</span>
-                <h2 style="margin-top: 10px;">Nossa História Desde 1990</h2>
-                <p style="font-size: 1.15rem; max-width: 800px; margin: 0 auto; color: var(--text-muted); font-weight: 300;">
+            <div class="premium-panel" style="text-align: center;">
+                <span class="hero-badge" style="margin-top: -65px; background: #821c14; color: #ffffff; border-color: var(--panel-yellow-border); position: relative; z-index: 10;">Herança & Técnica</span>
+                <h2 style="margin-top: 10px; color: #821c14;">Nossa História Desde 1990</h2>
+                <p style="font-size: 1.15rem; max-width: 800px; margin: 0 auto; color: var(--text-muted); font-weight: 600;">
                     Muito antes de levarmos os fornos para o seu evento, nossa paixão nasceu na pizzaria da família. Hoje, honramos essa herança afetiva unindo a tradição que atravessa gerações à excelência técnica napolitana: hidratação absoluta da massa, respeito ao tempo e ingredientes de primeiríssima linha.
                 </p>
             </div>
@@ -536,14 +565,14 @@
             </div>
 
             <div class="premium-panel" style="text-align: center; margin-top: 70px;">
-                <h2 style="font-size: 2.2rem;">Pronto para transformar seu evento?</h2>
-                <p style="font-size: 1.15rem; margin-bottom: 35px; color: var(--text-muted); font-weight: 300;">Nossas datas de fim de semana são concorridas. Não deixe para a última hora, reserve já o seu espetáculo gastronômico.</p>
+                <h2 style="font-size: 2.2rem; color: #821c14;">Pronto para transformar seu evento?</h2>
+                <p style="font-size: 1.15rem; margin-bottom: 35px; color: var(--text-muted); font-weight: 600;">Nossas datas de fim de semana são concorridas. Não deixe para a última hora, reserve já o seu espetáculo gastronômico.</p>
                 <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20verificar%20a%20disponibilidade%20de%20agenda%20para%20o%20meu%20evento." class="btn" target="_blank">
                     Falar com a Equipe no WhatsApp
                 </a>
             </div>
 
-            <div style="text-align: center; margin-top: 50px; color: var(--text-muted); font-size: 0.9rem;">
+            <div style="text-align: center; margin-top: 50px; color: #fceade; font-size: 0.95rem; font-weight: 600; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
                 &copy; 2026 O Pizzaiolo. Todos os direitos reservados. &bull; Foz do Iguaçu, PR.
             </div>
         </div>
