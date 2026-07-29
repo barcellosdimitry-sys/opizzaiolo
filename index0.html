@@ -5,449 +5,547 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Pizzaiolo - Pizza Artesanal no seu Evento</title>
 
-    <!-- Fonte Única - Elegante, Forte e com Alto Destaque -->
+    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-red: #9c271e;                 /* Vermelho Gourmet Quente e Profundo */
-            --bg-red-gradient: radial-gradient(circle at top center, #b83325 0%, #821c14 100%);
-            --panel-yellow: #f4d87a;           /* Amarelo Quente / Manteiga nobre para os quadros */
-            --panel-yellow-border: #c99e32;    /* Borda dourada/amarela escura */
-            --text-dark: #1f1a14;              /* Texto escuro de alto contraste para dentro dos quadros */
-            --text-muted: #4a3d31;             /* Texto secundário escuro legível */
-            --text-light: #ffffff;             /* Texto branco para fora dos quadros */
-            --accent-btn: #1a1612;             /* Botão de alto contraste elegante */
+            --accent-color: #d46b38;        
+            --accent-dark: #b05528;         
+            --accent-gold: #e0a353;         
+            --bg-dark-warm: #1a0a05;       
+            --bg-light: #faf7f2;
+            --bg-salmon-transition: #ebd3c7; 
+            --text-light: #ffffff;         
+            --text-dark: #2c2a29;
+            --text-muted: #f2ebe6;
+            --border-light: #e8ddd3;
         }
 
-        /* 1. FONTE ÚNICA COM DESTAQUE */
-        * {
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif !important;
-        }
-
-        /* 2. FUNDO ÚNICO VERMELHO DO INÍCIO AO FIM */
         body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-red);
-            background-image: var(--bg-red-gradient);
-            color: var(--text-light);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             -webkit-font-smoothing: antialiased;
-            font-size: 17px;
-            line-height: 1.6;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* 3. QUADROS EM AMARELO COM TEXTURA, ALTO DESTAQUE E MAIS SOMBRAS */
-        .premium-panel {
-            background-color: var(--panel-yellow);
-            background-image: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.05) 100%);
-            border: 3px solid var(--panel-yellow-border);
-            border-radius: 16px;
-            padding: 45px;
-            /* Sombras bem marcadas para destacar os quadros sobre o vermelho */
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45), 0 10px 20px rgba(0, 0, 0, 0.25);
-            margin-bottom: 35px;
-            color: var(--text-dark);
-        }
-
-        /* Textos dentro dos quadros amarelos */
-        .premium-panel h2, 
-        .premium-panel h3, 
-        .premium-panel p, 
-        .premium-panel span {
-            color: var(--text-dark);
-        }
-
-        h1, h2, h3 {
-            font-weight: 900;
-            margin-top: 0;
-            letter-spacing: -0.5px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            padding: 0 24px;
         }
 
         .section-header {
+            max-width: 800px;
+            margin: 0 auto 60px auto;
             text-align: center;
-            margin-bottom: 50px;
-            padding: 0 15px;
         }
 
         .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
             font-size: 3rem;
-            color: var(--text-light);
-            margin-bottom: 15px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         .section-header p {
-            font-size: 1.3rem;
-            color: #fceade;
-            max-width: 800px;
-            margin: 0 auto;
-            font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            font-size: 1.15rem;
+            color: #433b37;
+            line-height: 1.7;
         }
 
-        /* 4. ENQUADRAMENTO DAS IMAGENS COM BORDAS MARCANTES */
-        .framed-img {
-            width: 100%;
-            height: auto;
-            border: 4px solid #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            object-fit: cover;
-        }
-
-        /* BOTÕES DE ALTO IMPACTO */
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-btn);
-            color: var(--panel-yellow);
-            padding: 18px 45px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-            text-align: center;
-            border: 2px solid var(--panel-yellow);
-        }
-
-        .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        /* ABERTURA (HERO) */
+        /* 1. HERO / ABERTURA */
         header {
-            padding: 80px 0 60px 0;
+            background-color: var(--bg-dark-warm);
+            color: var(--text-light);
             text-align: center;
+            padding: 120px 24px 140px 24px;
+            background-image: 
+                radial-gradient(circle, rgba(18, 12, 10, 0.42) 0%, rgba(10, 5, 2, 0.78) 100%), 
+                url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01familiamesa.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+        }
+
+        header .brand-box {
+            margin-bottom: 25px;
+            display: flex; justify-content: center; align-items: center;
         }
 
         header .logo-img {
-            max-width: 240px;
-            margin-bottom: 35px;
-            filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.6));
+            max-width: 250px; height: auto;
+            filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.95)) saturate(1.4) brightness(1.15) contrast(1.15);
+            transition: transform 0.3s ease;
         }
 
         .hero-badge {
             display: inline-block;
-            background-color: rgba(0, 0, 0, 0.3);
-            border: 2px solid var(--panel-yellow);
-            padding: 10px 25px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 20px;
             border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--panel-yellow);
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        header h1 {
-            font-size: 4rem;
-            line-height: 1.1;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--accent-gold);
             margin-bottom: 25px;
-            color: var(--text-light);
-            text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
-        }
-
-        header p.hero-text {
-            font-size: 1.4rem;
-            font-weight: 600;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            color: #fceade;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-image-container {
-            max-width: 900px;
-            margin: 0 auto 60px auto;
-        }
-
-        /* DOR E ALÍVIO */
-        section { padding: 70px 0; }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: stretch;
-        }
-
-        .benefit-content h3 {
-            font-size: 2rem;
-            color: #821c14;
-            margin-bottom: 15px;
-            font-weight: 900;
-        }
-
-        .benefit-content p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        /* LISTAS EXPANSÍVEIS (CARDÁPIO E EXPERIÊNCIA) - Fixo sem Parallax */
-        .expandable-list { list-style: none; padding: 0; margin: 0; }
-        
-        .expandable-list li {
-            border-bottom: 2px solid rgba(31, 26, 20, 0.15);
-            padding: 25px 0;
-        }
-        
-        .expandable-list li:last-child { border-bottom: none; padding-bottom: 0; }
-        .expandable-list li:first-child { padding-top: 0; }
-
-        .expand-toggle {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-        
-        .expand-toggle span {
-            font-size: 0.9rem;
-            font-weight: 800;
-            color: #ffffff;
-            background-color: #821c14;
-            border: 2px solid #821c14;
-            padding: 6px 16px;
-            border-radius: 50px;
-            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
             letter-spacing: 0.5px;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .expand-toggle:hover span {
-            background-color: #1a1612;
-            border-color: #1a1612;
-        }
-
-        .expandable-list p {
-            margin: 15px 0 0 0;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        
-        .expand-image-box {
-            max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
-        }
-        .expand-image-box.active { max-height: 450px; margin-top: 25px; }
-        
-        /* COMO FUNCIONA (PASSOS) */
-        .steps-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
-        }
-
-        .step-item {
-            text-align: center;
-            padding: 35px 25px;
-        }
-
-        .step-item img {
-            height: 160px;
-            margin-bottom: 25px;
-            border-radius: 50%;
-            border: 4px solid var(--panel-yellow-border);
-            object-fit: cover;
-            width: 160px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        .step-item h3 {
-            font-size: 1.6rem;
-            color: #821c14;
-            font-weight: 900;
-        }
-
-        .step-item p {
-            font-weight: 600;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        /* 5. FAQ - CORREÇÃO DE ESTRUTURA PARA CELULAR */
-        .faq-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        details {
-            background-color: var(--panel-yellow);
-            background-image: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.05) 100%);
-            border: 3px solid var(--panel-yellow-border);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        summary {
-            padding: 22px 25px;
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        summary::-webkit-details-marker { display: none; }
-        summary::after { content: '+'; color: #821c14; font-size: 2rem; font-weight: 900; }
-        details[open] summary::after { content: '−'; }
-        
-        .faq-answer {
-            padding: 0 25px 25px 25px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-
-        .cta-note {
-            display: block; font-size: 1rem; color: #fceade;
-            margin-top: 15px;
-            font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
-        /* RESPONSIVIDADE */
-        @media (max-width: 992px) {
-            .benefits-grid { grid-template-columns: 1fr; }
-            .steps-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
+            .hero-badge {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+                line-height: 1.4;
+            }
+        }
+
+        header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.15;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.95), 0px 8px 24px rgba(0, 0, 0, 0.7);
+        }
+
+        header p.hero-text {
+            font-size: 1.25rem;
+            max-width: 780px;
+            margin: 0 auto 30px auto;
+            color: var(--text-muted);
+            font-weight: 400;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 1), 0px 4px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .cta-wrapper { display: inline-block; max-width: 550px; text-align: center; }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 20px 48px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 10px 25px rgba(212, 107, 56, 0.4);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 107, 56, 0.6);
+        }
+
+        .cta-note {
+            display: block; font-size: 0.9rem; color: #d1c7bd;
+            margin-top: 15px; font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+        }
+
+        /* 2. A DOR E O ALÍVIO (Ajustado para 3 quadros simétricos) */
+        .benefits-section {
+            padding: 100px 24px;
+            background-color: var(--bg-salmon-transition);
+        }
+
+        .benefits-layout-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: stretch; /* Garante que os 3 blocos tenham a mesma altura */
+        }
+
+        .benefit-card {
+            background-color: #ffffff; 
+            border-radius: 8px; 
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06); 
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .benefit-img-wrapper { 
+            width: 100%; 
+            height: 220px; 
+            overflow: hidden; 
+        }
+
+        .benefit-img-wrapper img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+        
+        .benefit-content { 
+            padding: 25px 30px; 
+            flex-grow: 1; /* Faz o texto preencher o espaço mantendo a simetria */
+        }
+
+        .benefit-card h3 {
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 1.6rem;
+            color: var(--text-dark); 
+            margin: 0 0 10px 0;
+        }
+
+        .benefit-card p { 
+            font-size: 0.95rem; 
+            color: #5e5754; 
+            line-height: 1.5; 
+            margin: 0; 
+        }
+
+        .benefits-featured-img {
+            width: 100%;
+            height: 100%; /* Acompanha a altura dos cartões ao lado */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        .benefits-featured-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 3. CARDÁPIO COM FUNDO DE IMAGEM (Imagem de fundo FIXADA) */
+        .menu-section-bg {
+            padding: 100px 24px;
+            background-image: 
+                linear-gradient(rgba(26, 10, 5, 0.42), rgba(15, 6, 3, 0.46)),
+                url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/05pizzaespi.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Efeito Fixado Garantido */
+        }
+        
+        .menu-section-bg .section-header h2 { 
+            color: #ffffff; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+        .menu-section-bg .section-header p { 
+            color: var(--text-light); 
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.9);
+            font-weight: 500;
+        }
+
+        /* LISTAS EXPANSÍVEIS (Abertura de imagens simétricas) */
+        .expandable-section { padding: 80px 24px 100px 24px; }
+        .bg-transition { background-color: var(--bg-salmon-transition); }
+
+        .content-box {
+            background-color: #ffffff; padding: 40px; border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            max-width: 800px; margin: 0 auto;
+        }
+
+        .expandable-list { list-style: none; padding: 0; margin: 0; }
+        .expandable-list li { margin-bottom: 24px; border-bottom: 1px solid #f0ebe4; padding-bottom: 16px; }
+        .expandable-list li:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+
+        .expand-toggle {
+            font-size: 1.15rem; color: var(--text-dark); display: flex;
+            justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700;
+        }
+        
+        .expand-toggle span {
+            font-size: 0.8rem; font-weight: 500; color: var(--accent-color);
+            background-color: var(--bg-light); padding: 3px 10px; border-radius: 4px;
+            border: 1px solid #f0ebe4;
+        }
+
+        .expandable-list p { margin: 8px 0 0 0; color: #666; font-size: 0.95rem; line-height: 1.5; }
+        
+        .expand-image-box { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: all 0.4s ease; 
+            border-radius: 6px; 
+        }
+        
+        .expand-image-box.active { 
+            max-height: 300px; /* Garante espaço suficiente para abrir uniformemente */
+            margin-top: 15px; 
+        }
+        
+        .expand-image-box img { 
+            width: 100%; 
+            height: 250px; /* Altura fixa e idêntica para TODAS as imagens que abrem */
+            object-fit: cover; 
+            border-radius: 6px; 
+        }
+
+        /* 5. TRADIÇÃO & QUALIDADE (Cores mais escuras e leitura destacada) */
+        .tradition-section {
+            background-color: var(--bg-dark-warm);
+            color: var(--text-light);
+            text-align: center;
+            padding: 100px 24px;
+            background-image: 
+                linear-gradient(rgba(15, 6, 3, 0.88), rgba(10, 5, 2, 0.95)), /* Camada escura mais forte */
+                url('https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/07toalha.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .heritage-badge {
+            display: inline-block; color: var(--accent-gold); font-size: 0.95rem;
+            letter-spacing: 2.5px; text-transform: uppercase; font-weight: 700;
+            margin-bottom: 20px; border-bottom: 1px solid var(--accent-gold); padding-bottom: 5px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+        }
+
+        .tradition-section h2 {
+            font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+            color: #ffffff; margin: 0 0 24px 0;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.9);
+        }
+        
+        .tradition-section p {
+            font-size: 1.15rem; max-width: 760px; margin: 0 auto;
+            color: #f2ebe6; line-height: 1.8;
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.9);
+            font-weight: 500;
+        }
+
+        /* 6. COMO FUNCIONA (Imagens 100% alinhadas e simétricas) */
+        .how-it-works-section {
+            padding: 100px 24px;
+            background-color: var(--bg-salmon-transition);
+            text-align: center;
+        }
+
+        .steps-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+            max-width: 1000px; margin: 0 auto;
+        }
+
+        .step-card {
+            background-color: #ffffff; padding: 24px 24px 40px 24px; border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+        }
+
+        .step-image-strip {
+            width: 100%; 
+            height: 180px; /* Altura simétrica estrita para todos os quadros */
+            border-radius: 6px;
+            overflow: hidden; margin-bottom: 20px;
+        }
+        
+        .step-image-strip img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        .step-card h3 {
+            font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin: 0 0 12px 0;
+        }
+        
+        .step-card p {
+            font-size: 1rem; color: #5e5754; line-height: 1.6; margin: 0;
+        }
+
+        /* 7. FAQ & CTA FINAL */
+        .faq-cta-section {
+            padding: 100px 24px;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 800px; margin: 0 auto 60px auto; text-align: left;
+        }
+
+        details {
+            background-color: #ffffff; border: 1px solid var(--border-light);
+            border-radius: 6px; margin-bottom: 15px; overflow: hidden;
+        }
+
+        summary {
+            padding: 20px; font-size: 1.05rem; font-weight: 600; color: var(--text-dark);
+            cursor: pointer; list-style: none; display: flex; justify-content: space-between;
+        }
+        
+        summary::-webkit-details-marker { display: none; }
+        
+        summary::after {
+            content: '+'; color: var(--accent-color); font-size: 1.5rem; line-height: 1;
+        }
+        
+        details[open] summary::after { content: '−'; }
+        
+        .faq-answer {
+            padding: 0 20px 20px 20px; font-size: 0.95rem; color: #5e5754; line-height: 1.6;
+        }
+
+        .final-cta-box {
+            background-color: var(--bg-dark-warm); padding: 60px 40px;
+            border-radius: 12px; max-width: 800px; margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .final-cta-box h2 {
+            font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #ffffff; margin: 0 0 15px 0;
+        }
+        .final-cta-box p { color: var(--text-muted); margin-bottom: 35px; font-size: 1.1rem; }
+        
+        .footer-text { margin-top: 60px; font-size: 0.85rem; color: #9e9188; }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            header h1 { font-size: 3.6rem; }
+            .section-header h2 { font-size: 2.5rem; }
+            .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            /* No tablet/mobile a simetria de 3 cai para coluna única na vertical */
+            .benefits-layout-grid { grid-template-columns: 1fr; }
+            .benefits-featured-img { height: 400px; } 
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 90px 20px 100px 20px; }
             header h1 { font-size: 2.8rem; }
-            .section-header h2 { font-size: 2.4rem; }
-            .hero-badge { font-size: 0.9rem; padding: 8px 18px; }
-            .premium-panel { padding: 30px 20px; }
-            .expand-toggle { font-size: 1.2rem; }
-            .expand-toggle span { padding: 5px 12px; font-size: 0.8rem; }
+            .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+            .section-header h2, .tradition-section h2, .final-cta-box h2 { font-size: 2.2rem; }
+            /* Em telas menores o parallax fica natural desativando o fixed por padrão de navegadores mobile, mas manterá o enquadramento perfeito */
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 2.3rem; }
+            .btn { width: 100%; box-sizing: border-box; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ABERTURA (HERO) -->
+    <!-- 1. ABERTURA (HERO) -->
     <header>
         <div class="container">
-            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/logosfun.jpg" alt="O Pizzaiolo" class="logo-img">
+            <div class="brand-box">
+                <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/00logosfun.jpg" alt="O Pizzaiolo" class="logo-img">
+            </div>
             
-            <div>
-                <span class="hero-badge">Foz do Iguaçu &bull; Rodízio a R$60,00/pessoa &bull; Mín. 12 convidados</span>
+            <div class="hero-badge">
+                Foz do Iguaçu &bull; Rodízio a R$60,00/pessoa &bull; Mínimo de 12 convidados
             </div>
 
-            <h1>O verdadeiro espetáculo da<br>pizza artesanal no seu evento</h1>
+            <h1>Rodízio de pizza artesanal<br>na sua casa ou evento</h1>
+            <p class="hero-text">Transforme o seu espaço com aromas, ingredientes frescos e pizzas montadas na hora. Você se dedica a criar memórias com seus convidados, nós cuidamos de toda a gastronomia.</p>
             
-            <p class="hero-text">Esqueça o trabalho na cozinha e foque nos seus convidados. Nós transformamos o seu espaço com aromas irresistíveis, ingredientes premium e a autêntica arte de assar pizzas na hora.</p>
-            
-            <div class="hero-image-container">
-                <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg" class="framed-img" alt="Pizza Assando">
+            <div class="cta-wrapper">
+                <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20meu%20evento." class="btn" target="_blank">
+                    Solicitar Proposta Para Meu Evento
+                </a>
+                <span class="cta-note">Envie a data/convidados e responderemos rapidamente no WhatsApp.</span>
             </div>
-
-            <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20meu%20evento." class="btn" target="_blank">
-                Solicitar Orçamento no WhatsApp
-            </a>
-            <span class="cta-note">Envie a data e a quantidade de convidados. Resposta rápida.</span>
         </div>
     </header>
 
-    <!-- A DOR E O ALÍVIO -->
-    <section>
+    <!-- 2. A DOR E O ALÍVIO (Layout de 3 quadros simétricos) -->
+    <section class="benefits-section">
         <div class="container">
             <div class="section-header">
-                <h2>A festa é sua, o espetáculo é nosso.</h2>
-                <p>Deixe a logística pesada por nossa conta e viva a verdadeira experiência de ser o convidado de honra na própria festa.</p>
+                <h2>A festa é sua e a cozinha é nossa.</h2>
+                <p>A logística é por nossa conta. Chegamos antes, montamos a estrutura e servimos sem parar. Seu único trabalho será desfrutar junto aos convidados a sua própria festa.</p>
             </div>
                         
-            <div class="benefits-grid">
-                <div class="premium-panel">
-                    <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/002.jpg" class="framed-img" style="margin-bottom: 25px; height: 250px;" alt="O Anfitrião Livre">
+            <div class="benefits-layout-grid">
+                
+                <!-- Quadro 1 -->
+                <div class="benefit-card">
+                    <div class="benefit-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/02pessoaspizza.jpg" alt="O Anfitrião Livre">
+                    </div>
                     <div class="benefit-content">
                         <h3>O Anfitrião 100% Livre</h3>
-                        <p>Diga adeus ao fogão, à preocupação com a reposição de comida e à pia cheia de louça no dia seguinte. Nossa equipe domina o serviço para que você possa brindar, sorrir e conversar sem interrupções, do primeiro ao último convidado.</p>
+                        <p>Esqueça o forno, a reposição de pizza. Nossa equipe opera todo o serviço para que você possa brindar e conversar sem interrupções do início ao fim.</p>
                     </div>
                 </div>
                 
-                <div class="premium-panel">
-                    <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/001.jpg" class="framed-img" style="margin-bottom: 25px; height: 250px;" alt="O Espetáculo">
+                <!-- Quadro 2 -->
+                <div class="benefit-card">
+                    <div class="benefit-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/03olhonapizza.jpg" alt="O Espetáculo no Local">
+                    </div>
                     <div class="benefit-content">
-                        <h3>Gastronomia como Entretenimento</h3>
-                        <p>Entregamos muito mais que comida; entregamos um evento. A abertura das massas e o preparo das pizzas aos olhos dos seus convidados criam uma atmosfera envolvente, perfumada e inesquecível na sua casa.</p>
+                        <h3>O Espetáculo no Local</h3>
+                        <p>Entregamos entretenimento. A montagem e o preparo das pizzas aos olhos dos convidados criam uma atmosfera envolvente, perfumada e inesquecível.</p>
                     </div>
                 </div>
+
+                <!-- Quadro 3 (Simétrico) -->
+                <div class="benefits-featured-img">
+                    <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/08farinha.jpg" alt="Espetáculo de Pizza Artesanal">
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- DESTAQUES DO CARDÁPIO -->
-    <section>
+    <!-- 3. DESTAQUES DO CARDÁPIO (Fundo Fixado) -->
+    <section class="menu-section-bg">
         <div class="container">
             <div class="section-header">
-                <h2>Obras-Primas do Cardápio</h2>
-                <p>Sabores inesquecíveis, elaborados com técnica e paixão. Toque para ver a magia.</p>
+                <h2>Destaques do Cardápio</h2>
+                <p>Nossos sabores mais desejados. Clique para visualizar as pizzas. Cárdápio com 20 sabores.</p>
             </div>
 
-            <div class="premium-panel" style="max-width: 850px; margin: 0 auto;">
+            <div class="content-box">
                 <ul class="expandable-list">
                     <li>
                         <div class="expand-toggle" onclick="toggleImage(this)">
-                            Calabresa Especial & Cebola <span>Ver Foto</span>
+                            Calabresa & Cebola <span>Ver Foto</span>
                         </div>
-                        <p>A base de muçarela recebe nosso molho rústico, finas fatias de calabresa artesanal e generosas camadas de cebola fresca.</p>
+                        <p>Muçarela, molho de tomates, calabresa e generosas camadas de cebola.</p>
                         <div class="expand-image-box">
-                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/002.jpg" class="framed-img" alt="Calabresa Especial">
+                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/16calacebola.jpg" alt="Calabresa Especial">
                         </div>
                     </li>
                     <li>
                         <div class="expand-toggle" onclick="toggleImage(this)">
-                            Pepperoni Premium <span>Ver Foto</span>
+                            Figo com Gorgonzola <span>Ver Foto</span>
                         </div>
-                        <p>O equilíbrio perfeito: molho de tomate pelado, muçarela derretida e rodelas rigorosamente selecionadas de salame pepperoni.</p>
+                        <p>Molho de tomates, muçarela derretida, gorgonzola e figos em conserva.</p>
                         <div class="expand-image-box">
-                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/004.jpg" class="framed-img" alt="Pepperoni Premium">
+                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/13figorgonzola.jpg" alt="Pepperoni Premium">
                         </div>
                     </li>
                     <li>
                         <div class="expand-toggle" onclick="toggleImage(this)">
-                            Colonial com Goiabada & Bacon <span>Ver Foto</span>
+                            Muçarela de Bufala com Prosciutto <span>Ver Foto</span>
                         </div>
-                        <p>Nossa explosão agridoce: autêntico queijo branco colonial, cubos de bacon crocante finalizados com um toque de goiabada derretida.</p>
+                        <p>Muçarela, muçarela de bufala em gotas generosas, molho de tomates e proisciuto.</p>
                         <div class="expand-image-box">
-                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/001.jpg" class="framed-img" alt="Colonial e Bacon">
+                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/15parma.jpg" alt="Colonial e Bacon">
                         </div>
                     </li>
                     <li>
                         <div class="expand-toggle" onclick="toggleImage(this)">
                             Chocolate Cremoso com Morangos <span>Ver Foto</span>
                         </div>
-                        <p>Base suave de creme de leite, coberta com chocolate nobre derretido e finalizada com morangos frescos fatiados na hora.</p>
+                        <p>Creme de leite, coberto com chocolate derretido e frescos morangos fatiados.</p>
                         <div class="expand-image-box">
-                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/003.jpg" class="framed-img" alt="Chocolate com Morangos">
+                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/14morango.jpg" alt="Chocolate com Morangos">
                         </div>
                     </li>
                 </ul>
@@ -455,41 +553,41 @@
         </div>
     </section>
 
-    <!-- A EXPERIÊNCIA COMPLETA -->
-    <section>
+    <!-- 4. A EXPERIÊNCIA COMPLETA (Aberturas iguais para fotos) -->
+    <section class="expandable-section bg-transition">
         <div class="container">
             <div class="section-header">
-                <h2>Muito Além da Pizza</h2>
-                <p>A sua experiência gastronômica começa muito antes da primeira fatia ser servida.</p>
+                <h2>Serviços Complementares</h2>
+                <p>Charcutaria & Queijos  -  Conservas Exclusivas  -  Massas de Longa Fermentação.</p>
             </div>
 
-            <div class="premium-panel" style="max-width: 850px; margin: 0 auto;">
+            <div class="content-box">
                 <ul class="expandable-list">
                     <li>
                         <div class="expand-toggle" onclick="toggleImage(this)">
-                            Mesa de Charcutaria & Queijos <span>Ver Foto</span>
+                            Charcutaria & Queijos (Peça um orçamento) <span>Ver Foto</span>
                         </div>
-                        <p>Recepção impecável com uma seleção cuidadosa de antepastos, frios nobres e queijos artesanais para abrir o paladar com elegância.</p>
+                        <p>Antepastos, frios nobres e queijos para abrir o paladar dos seus convidados com elegância.</p>
                         <div class="expand-image-box">
-                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/01principal.jpg" class="framed-img" alt="Mesa de Frios e Charcutaria">
+                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/06tabuafrios.jpg" alt="Mesa de Frios e Charcutaria">
                         </div>
                     </li>
                     <li>
                         <div class="expand-toggle" onclick="toggleImage(this)">
-                            Conservas Exclusivas da Casa <span>Ver Foto</span>
+                            Conservas Exclusivas (Peça um orçamento)<span>Ver Foto</span>
                         </div>
-                        <p>Criações únicas da nossa cozinha. Nossas conservas artesanais surpreendem e elevam o nível de sabor da sua mesa de entradas.</p>
+                        <p>Acompanhamentos que surpreendem. Nossas criações exclusivas, como as requintadas conservas artesanais, elevam o nível de sabor da sua mesa de entradas.</p>
                         <div class="expand-image-box">
-                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/004.jpg" class="framed-img" alt="Conservas Artesanais">
+                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/09queijos.jpg" alt="Conservas Artesanais">
                         </div>
                     </li>
                     <li>
                         <div class="expand-toggle" onclick="toggleImage(this)">
-                            Massa de Fermentação Prolongada <span>Ver Foto</span>
+                            Massas de Longa Fermentação (Peça um orçamento)<span>Ver Foto</span>
                         </div>
-                        <p>O coração do evento: massas leves de fermentação natural longa. O resultado são bordas alveoladas, crocantes e fatias de digestão incrivelmente leve.</p>
+                        <p>A atração principal: massas leves de fermentação natural prolongada, assadas na hora, resultando em bordas perfeitamente alveoladas e fatias irresistíveis.</p>
                         <div class="expand-image-box">
-                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/002.jpg" class="framed-img" alt="Massa de Longa Fermentação">
+                            <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/11fagaccia.jpg" alt="Massa de Longa Fermentação">
                         </div>
                     </li>
                 </ul>
@@ -497,83 +595,87 @@
         </div>
     </section>
 
-    <!-- TRADIÇÃO -->
-    <section>
+    <!-- 5. TRADIÇÃO & QUALIDADE (Leitura destacada e contrastada) -->
+    <section class="tradition-section">
         <div class="container">
-            <div class="premium-panel" style="text-align: center;">
-                <span class="hero-badge" style="margin-top: -65px; background: #821c14; color: #ffffff; border-color: var(--panel-yellow-border); position: relative; z-index: 10;">Herança & Técnica</span>
-                <h2 style="margin-top: 10px; color: #821c14;">Nossa História Desde 1990</h2>
-                <p style="font-size: 1.15rem; max-width: 800px; margin: 0 auto; color: var(--text-muted); font-weight: 600;">
-                    Muito antes de levarmos os fornos para o seu evento, nossa paixão nasceu na pizzaria da família. Hoje, honramos essa herança afetiva unindo a tradição que atravessa gerações à excelência técnica napolitana: hidratação absoluta da massa, respeito ao tempo e ingredientes de primeiríssima linha.
-                </p>
-            </div>
+            <span class="heritage-badge">Herança & Técnica</span>
+            <h2>Nossa história desde 1990</h2>
+            <p>
+                Muito antes de levarmos os fornos para o seu evento, nossa paixão nasceu na pizzaria da família. Hoje, honramos essa herança afetiva unindo a tradição que atravessa gerações à excelência da verdadeira técnica de pizza de longa fermentação, hidratação impecável, respeito absoluto ao tempo de maturação e ingredientes criteriosamente selecionados.
+            </p>
         </div>
     </section>
 
-    <!-- COMO FUNCIONA -->
-    <section>
+    <!-- 6. COMO FUNCIONA (Imagens fixadas no mesmo tamanho) -->
+    <section class="how-it-works-section">
         <div class="container">
             <div class="section-header">
-                <h2>Sem Complicações. Apenas Sabor.</h2>
-                <p>Da primeira mensagem ao último pedaço de pizza, garantimos a sua total tranquilidade.</p>
+                <h2>Como Funciona</h2>
+                <p>Da sua primeira mensagem até o fim da festa, tudo é pensado para sua tranquilidade.</p>
             </div>
 
             <div class="steps-grid">
-                <div class="premium-panel step-item">
-                    <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/004.jpg" alt="O Contato">
-                    <h3>1. O Contato</h3>
-                    <p>Você envia a data e o número de convidados pelo WhatsApp. Retornamos prontamente com orçamentos detalhados.</p>
+                <div class="step-card">
+                    <div class="step-image-strip">
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/17dimi.jpg" alt="O Contato">
+                    </div>
+                    <h3>O Contato</h3>
+                    <p>Você envia a data e o número de convidados pelo WhatsApp. Nós retornamos com orçamentos e sugestões para o seu evento.</p>
                 </div>
-                <div class="premium-panel step-item">
-                    <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/002.jpg" alt="O Planejamento">
-                    <h3>2. Os Bastidores</h3>
-                    <p>Personalizamos seu cardápio e iniciamos o preparo antecipado, garantindo o tempo vital de maturação da sua massa.</p>
+                <div class="step-card">
+                    <div class="step-image-strip">
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/19planejamento.jpg" alt="O Planejamento">
+                    </div>
+                    <h3>O Planejamento</h3>
+                    <p>Com profissionais treinados e produtos de qualidade garantimos 3 horas ininterruptas de serviço.</p>
                 </div>
-                <div class="premium-panel step-item">
-                    <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/001.jpg" alt="O Evento">
-                    <h3>3. O Evento</h3>
-                    <p>Chegamos com antecedência, montamos estrutura própria, servimos com excelência e deixamos tudo impecável ao final.</p>
+                <div class="step-card">
+                    <div class="step-image-strip">
+                        <img src="https://raw.githubusercontent.com/barcellosdimitry-sys/opizzaiolo/main/18evento.jpg" alt="O Evento">
+                    </div>
+                    <h3>O Evento</h3>
+                    <p>Chegamos antes, montamos nossa estrutura independente e servimos sem parar do início ao fim da festa.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ & CTA -->
-    <section>
+    <!-- 7. FAQ & CTA FINAL -->
+    <section class="faq-cta-section">
         <div class="container">
             <div class="section-header">
-                <h2>Dúvidas Frequentes</h2>
+                <h2>Perguntas Frequentes</h2>
             </div>
 
             <div class="faq-container">
                 <details>
                     <summary>Qual a quantidade mínima de convidados?</summary>
-                    <div class="faq-answer">Nosso formato de rodízio e estrutura foi desenhado para atender eventos a partir de 12 convidados, garantindo a dinâmica perfeita e farta de pizzas quentinhas.</div>
+                    <div class="faq-answer">Nosso atendimento é planejado para eventos a partir de 12 convidados, garantindo a dinâmica perfeita do rodízio.</div>
                 </details>
                 <details>
                     <summary>Vocês precisam usar a minha cozinha?</summary>
-                    <div class="faq-answer">De forma alguma. Levamos nossos próprios fornos portáteis de alta performance e montamos uma estrutura 100% independente. Não usamos seu gás, nem deixamos bagunça na sua pia.</div>
+                    <div class="faq-answer">Não! Nós levamos nossos fornos portáteis de alta performance e montamos uma estrutura independente. Você não precisa se preocupar com gás ou bagunça na sua cozinha.</div>
                 </details>
                 <details>
-                    <summary>Até onde vocês vão?</summary>
-                    <div class="faq-answer">Atendemos de forma exclusiva toda a cidade de Foz do Iguaçu e regiões próximas. Envie a localização no WhatsApp para confirmarmos!</div>
+                    <summary>Qual o raio de atendimento?</summary>
+                    <div class="faq-answer">Atendemos de forma exclusiva toda a cidade de Foz do Iguaçu e regiões próximas.</div>
                 </details>
                 <details>
-                    <summary>As bebidas estão inclusas no valor?</summary>
-                    <div class="faq-answer">Nosso foco é entregar a melhor experiência gastronômica com as pizzas e mesas de entrada. As bebidas e o serviço de bar ficam sob responsabilidade do anfitrião.</div>
+                    <summary>As bebidas estão inclusas?</summary>
+                    <div class="faq-answer">Nosso foco é entregar a melhor experiência gastronômica com as pizzas e entradas. As bebidas ficam sob responsabilidade do anfitrião.</div>
                 </details>
             </div>
 
-            <div class="premium-panel" style="text-align: center; margin-top: 70px;">
-                <h2 style="font-size: 2.2rem; color: #821c14;">Pronto para transformar seu evento?</h2>
-                <p style="font-size: 1.15rem; margin-bottom: 35px; color: var(--text-muted); font-weight: 600;">Nossas datas de fim de semana são concorridas. Não deixe para a última hora, reserve já o seu espetáculo gastronômico.</p>
+            <div class="final-cta-box">
+                <h2>Pronto para ser um convidado na própria festa?</h2>
+                <p>Clique abaixo e reserve a sua data.</p>
                 <a href="https://wa.me/5547988429749?text=Olá!%20Gostaria%20de%20verificar%20a%20disponibilidade%20de%20agenda%20para%20o%20meu%20evento." class="btn" target="_blank">
-                    Falar com a Equipe no WhatsApp
+                    Falar no WhatsApp
                 </a>
             </div>
 
-            <div style="text-align: center; margin-top: 50px; color: #fceade; font-size: 0.95rem; font-weight: 600; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
-                &copy; 2026 O Pizzaiolo. Todos os direitos reservados. &bull; Foz do Iguaçu, PR.
+            <div class="footer-text">
+                &copy; O Pizzaiolo. Todos os direitos reservados. &bull; Foz do Iguaçu, PR.
             </div>
         </div>
     </section>
